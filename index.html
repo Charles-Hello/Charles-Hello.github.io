@@ -13,7 +13,7 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
   <meta name="theme-color" content="#2f4154">
-  <meta name="author" content="Hss">
+  <meta name="author" content="TNanko_摸鱼">
   <meta name="keywords" content="">
   
     <meta name="description" content="狗都不写日记！">
@@ -23,7 +23,7 @@
 <meta property="og:site_name" content="TNanko_摸鱼">
 <meta property="og:description" content="狗都不写日记！">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:author" content="Hss">
+<meta property="article:author" content="TNanko_摸鱼">
 <meta name="twitter:card" content="summary_large_image">
   
   
@@ -445,13 +445,13 @@
       
         jQuery.ajax({
           type: 'GET',
-          url: 'https://api.xcboke.cn/api/yulu?c=1001&amp;encode=json',
+          url: 'https://api.muxiaoguo.cn/api/caihongpi',
           headers: {},
           dataType: 'json',
           success: function(result) {
             var apiText;
             if (result) {
-              var keys = 'text'.split(',');
+              var keys = 'data,comment'.split(',');
               if (result instanceof Array) {
                 result = result[0];
               }
@@ -469,7 +469,7 @@
           },
           error: function(xhr, status, error) {
             if (error) {
-              console.error('Failed to request https://api.xcboke.cn/api/yulu?c=1001&amp;encode=json:', error);
+              console.error('Failed to request https://api.muxiaoguo.cn/api/caihongpi:', error);
             }
             typing(text);
           }
