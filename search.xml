@@ -1,6 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>部署Hexo静态博客</title>
+    <url>/2022/03/04/hello-world/</url>
+    <content><![CDATA[<ul>
+<li>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</li>
+</ul>
+<h2 id="快速开始您的博客"><a href="#快速开始您的博客" class="headerlink" title="快速开始您的博客"></a>快速开始您的博客</h2><h3 id="快速创造一篇推文"><a href="#快速创造一篇推文" class="headerlink" title="快速创造一篇推文"></a>快速创造一篇推文</h3><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span><br></code></pre></td></tr></table></figure>
+
+<p>官方文档: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="启动Hexo服务器"><a href="#启动Hexo服务器" class="headerlink" title="启动Hexo服务器"></a>启动Hexo服务器</h3><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ hexo server<br></code></pre></td></tr></table></figure>
+
+<p>官方文档: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="生成静态页面"><a href="#生成静态页面" class="headerlink" title="生成静态页面"></a>生成静态页面</h3><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ hexo generate<br></code></pre></td></tr></table></figure>
+
+<p>官方文档: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="部署Hexo到Github"><a href="#部署Hexo到Github" class="headerlink" title="部署Hexo到Github"></a>部署Hexo到Github</h3><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ hexo deploy<br></code></pre></td></tr></table></figure>
+
+<p>官方文档: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+<h3 id="快速一键"><a href="#快速一键" class="headerlink" title="快速一键"></a>快速一键</h3><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ hexo clean &amp;&amp; hexo generate &amp;&amp; hexo s<br></code></pre></td></tr></table></figure>]]></content>
+  </entry>
+  <entry>
     <title>Mysql与Python邂逅</title>
     <url>/2022/03/08/My-mysql/</url>
     <content><![CDATA[<h1 id="你好，Mysql"><a href="#你好，Mysql" class="headerlink" title="你好，Mysql"></a>你好，Mysql</h1><h4 id="MySQL的安装"><a href="#MySQL的安装" class="headerlink" title="MySQL的安装"></a>MySQL的安装</h4><figure class="highlight pgsql"><table><tr><td class="code"><pre><code class="hljs pgsql">sudo apt-<span class="hljs-keyword">get</span> install mysql-<span class="hljs-keyword">server</span><br></code></pre></td></tr></table></figure>
@@ -82,26 +102,6 @@
 
 
 ]]></content>
-  </entry>
-  <entry>
-    <title>部署Hexo静态博客</title>
-    <url>/2022/03/04/hello-world/</url>
-    <content><![CDATA[<ul>
-<li>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</li>
-</ul>
-<h2 id="快速开始您的博客"><a href="#快速开始您的博客" class="headerlink" title="快速开始您的博客"></a>快速开始您的博客</h2><h3 id="快速创造一篇推文"><a href="#快速创造一篇推文" class="headerlink" title="快速创造一篇推文"></a>快速创造一篇推文</h3><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span><br></code></pre></td></tr></table></figure>
-
-<p>官方文档: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="启动Hexo服务器"><a href="#启动Hexo服务器" class="headerlink" title="启动Hexo服务器"></a>启动Hexo服务器</h3><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ hexo server<br></code></pre></td></tr></table></figure>
-
-<p>官方文档: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="生成静态页面"><a href="#生成静态页面" class="headerlink" title="生成静态页面"></a>生成静态页面</h3><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ hexo generate<br></code></pre></td></tr></table></figure>
-
-<p>官方文档: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="部署Hexo到Github"><a href="#部署Hexo到Github" class="headerlink" title="部署Hexo到Github"></a>部署Hexo到Github</h3><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ hexo deploy<br></code></pre></td></tr></table></figure>
-
-<p>官方文档: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-<h3 id="快速一键"><a href="#快速一键" class="headerlink" title="快速一键"></a>快速一键</h3><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ hexo clean &amp;&amp; hexo generate &amp;&amp; hexo s<br></code></pre></td></tr></table></figure>]]></content>
   </entry>
   <entry>
     <title>🐶东抓网页ck</title>
