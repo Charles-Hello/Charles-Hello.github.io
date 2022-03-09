@@ -24,8 +24,8 @@
 <meta property="og:description" content="你好，MysqlMySQL的安装1sudo apt-get install mysql-server  MySQL的启动1sudo apt-get install mysql-server   MySQL的启动1sudo service mysql start   查看进程是否有MySQL1ps -ajx|grep mysql   结束MySQL1sudo service mysql stop">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://example.com/img/3.png">
-<meta property="article:published_time" content="2022-03-08T13:54:16.000Z">
-<meta property="article:modified_time" content="2022-03-08T14:12:22.782Z">
+<meta property="article:published_time" content="2022-03-08T21:54:16.000Z">
+<meta property="article:modified_time" content="2022-03-09T14:05:57.283Z">
 <meta property="article:author" content="TNanko_摸鱼">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="http://example.com/img/3.png">
@@ -204,8 +204,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-03-08 13:54" pubdate>
-          2022年3月8日 下午
+        <time datetime="2022-03-08 21:54" pubdate>
+          2022年3月8日 晚上
         </time>
       </span>
     
@@ -216,7 +216,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.2k 字
+          2.1k 字
         
       </span>
     
@@ -227,7 +227,7 @@
         
         
         
-          11 分钟
+          18 分钟
         
       </span>
     
@@ -278,7 +278,7 @@
               <p class="note note-info">
                 
                   
-                    本文最后更新于：2022年3月8日 下午
+                    本文最后更新于：2022年3月9日 下午
                   
                 
               </p>
@@ -364,6 +364,19 @@
 
 
 
+<h1 id="Python操作Mysql"><a href="#Python操作Mysql" class="headerlink" title="Python操作Mysql"></a>Python操作<em>Mysql</em></h1><h2 id="手术刀第一步：连接"><a href="#手术刀第一步：连接" class="headerlink" title="手术刀第一步：连接"></a>手术刀第一步：连接</h2><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs routeros">import pymysql<br>def getconn():<br>    ”““<br>    获取连接pymysql<br>    ”““<br>    return pymysql.connect(<br>    <span class="hljs-attribute">host</span>=”127.0.0.1“，<br>    <span class="hljs-attribute">user</span>=”root“，<br>    <span class="hljs-attribute">password</span>=”mysql“，<br>    <span class="hljs-attribute">database</span>=”Python“，<br>    <span class="hljs-attribute">charset</span>=”utf8“<br>    )<br>    <br></code></pre></td></tr></table></figure>
+
+<h2 id="手术刀第二步：获取数据"><a href="#手术刀第二步：获取数据" class="headerlink" title="手术刀第二步：获取数据"></a>手术刀第二步：获取数据</h2><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs vim">def query_data(sql):<br>    ”““<br>    根据mysql获得返回数据<br>    ”““<br>    conn = getconn()<br>    <span class="hljs-keyword">try</span>:<br>        <span class="hljs-built_in">cursor</span> =conn.<span class="hljs-built_in">cursor</span>(pymysql.cursors.DictCursor)<br>        <span class="hljs-built_in">cursor</span>.<span class="hljs-keyword">execute</span>(sql)<br>        <span class="hljs-keyword">return</span> <span class="hljs-built_in">cursor</span>.fetchall()<br>     <span class="hljs-keyword">finally</span>:<br>         #关闭mysql的链接<br>         conn.<span class="hljs-keyword">close</span>()<br><br></code></pre></td></tr></table></figure>
+
+<h2 id="手术刀第三步：增加数据或更新"><a href="#手术刀第三步：增加数据或更新" class="headerlink" title="手术刀第三步：增加数据或更新"></a>手术刀第三步：增加数据或更新</h2><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs vim">def insert_or_update_data(sql):<br>    ”““<br>    修改mysql的数据<br>    ”““<br>    conn = getconn()<br>    <span class="hljs-keyword">try</span>:<br>        <span class="hljs-built_in">cursor</span> =conn.<span class="hljs-built_in">cursor</span>(pymysql.cursors.DictCursor)<br>        <span class="hljs-built_in">cursor</span>.<span class="hljs-keyword">execute</span>(sql)<br>        conn.commit()<br>     <span class="hljs-keyword">finally</span>:<br>         #关闭mysql的链接<br>         conn.<span class="hljs-keyword">close</span>()<br><br></code></pre></td></tr></table></figure>
+
+
+<h2 id="这里调用模块开始表演了"><a href="#这里调用模块开始表演了" class="headerlink" title="这里调用模块开始表演了"></a>这里调用模块开始表演了</h2><h3 id="查-1"><a href="#查-1" class="headerlink" title="查"></a>查</h3><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs routeros"><span class="hljs-attribute">query_sql</span>=“select * <span class="hljs-keyword">from</span> Python“<br>query_data(query_sql)<br></code></pre></td></tr></table></figure>
+
+<h3 id="新增一条数据"><a href="#新增一条数据" class="headerlink" title="新增一条数据"></a>新增一条数据</h3><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs stylus">insert_sql=“”“incest Python (name,age) values (“tnanko,<span class="hljs-number">18</span>“)“”“<br><span class="hljs-function"><span class="hljs-title">insert_or_update_data</span><span class="hljs-params">(insert_sql)</span></span><br></code></pre></td></tr></table></figure>
+
+
+<h3 id="更新一条数据"><a href="#更新一条数据" class="headerlink" title="更新一条数据"></a>更新一条数据</h3><figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs applescript">update_sql=“update Python <span class="hljs-keyword">set</span> <span class="hljs-built_in">name</span> ‘哈哈哈‘ <span class="hljs-keyword">where</span> <span class="hljs-built_in">id</span> =<span class="hljs-number">3</span>“<br>insert_or_update_data(update_sql)<br></code></pre></td></tr></table></figure>
               
             </div>
             <hr/>
@@ -398,7 +411,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2022年3月8日</div>
+          <div>2022年3月9日</div>
         </div>
       
       <div class="license-meta-item">
