@@ -1,0 +1,661 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" >
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="先拿到原来的图片，然后对图片的正确大小，用网页进行缩放使其达到正常的图片大小，然后根据断点滑块的值来判断最后滑动的距离。   12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273">
+<meta property="og:type" content="article">
+<meta property="og:title" content="第三步 jd的m端滑块 check">
+<meta property="og:url" content="http://example.com/2023/09/4a7b38a4fd49.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="先拿到原来的图片，然后对图片的正确大小，用网页进行缩放使其达到正常的图片大小，然后根据断点滑块的值来判断最后滑动的距离。   12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/banner_images/banne_photo86.png">
+<meta property="article:published_time" content="2023-09-20T17:23:59.000Z">
+<meta property="article:modified_time" content="2023-09-27T08:27:52.000Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://example.com/banner_images/banne_photo86.png">
+  
+  
+  
+  <title>第三步 jd的m端滑块 check - Hexo</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body><!-- hexo injector body_begin start --><div id="web_bg"></div><!-- hexo injector body_begin end -->
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Fluid</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="第三步 jd的m端滑块 check"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2023-09-20 17:23" pubdate>
+          2023年9月20日 下午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          19k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          157 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">第三步 jd的m端滑块 check</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <p>先拿到原来的图片，然后对图片的正确大小，用网页进行缩放使其达到正常的图片大小，然后根据断点滑块的值来判断最后滑动的距离。</p>
+<p><img src="/../images/Pasted%20image%2020230920172406.png" srcset="/img/loading.gif" lazyload></p>
+<p><img src="/../images/Pasted%20image%2020230921204808.png" srcset="/img/loading.gif" lazyload></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">q</span>(<span class="hljs-params">t, e</span>) &#123;<br>                <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> n = t.<span class="hljs-title function_">toString</span>().<span class="hljs-property">length</span>; n &lt; e; )<br>                    t = <span class="hljs-string">&quot;0&quot;</span> + t,<br>                    n++;<br>                <span class="hljs-keyword">return</span> t<br>&#125;<br><br><br><br><br>r = n.<span class="hljs-property">sessionId</span> =<span class="hljs-string">&quot;fIS8JQABAAAIPtAi5FkAMHu---j78gy-GB0Hi1vlU50IYL3V0VefS5LFuK1KAf1wE0S8hgdj3af0wjXtsEplgAAAAAA&quot;</span>(由  <br><span class="hljs-attr">https</span>:<span class="hljs-comment">//plogin.m.jd.com/cgi-bin/mm/jcapsid的post的得到) 解决</span><br>o = n.<span class="hljs-property">language</span> =<span class="hljs-number">1</span> （固定） 解决<br>i = n.<span class="hljs-property">tdat_code</span> =<span class="hljs-number">99992</span> （固定） 解决<br>a = n.<span class="hljs-property">host</span> =<span class="hljs-string">&quot;//jcap.m.jd.com&quot;</span> （固定） 解决<br>s = n.<span class="hljs-property">st</span> =<span class="hljs-string">&quot;taJvP8ua60xCxdby&quot;</span> (会变)  <br>c = n.<span class="hljs-property">devcInfo</span> =<span class="hljs-string">&quot;&#123;&quot;</span>account<span class="hljs-string">&quot;:&quot;</span><span class="hljs-number">15015344889</span><span class="hljs-string">&quot;,&quot;</span>ccode<span class="hljs-string">&quot;:&quot;</span><span class="hljs-number">86</span><span class="hljs-string">&quot;,&quot;</span>capfp<span class="hljs-string">&quot;:&quot;</span>xpo7vzpVL5aRVVkbpmzqh117VZR_o7SNJgiJE24rprnSGM5XwlDKoQCe9EvBac2ym_S13lLjJgRpiIQitr6HRw==<span class="hljs-string">&quot;,&quot;</span>cvs<span class="hljs-string">&quot;:&quot;</span>a04d95f1d97489b23cce20bebd6d6d6b<span class="hljs-string">&quot;,&quot;</span>wgl<span class="hljs-string">&quot;:&quot;</span>0ef36cfe7a17521389b08af14c0554d0<span class="hljs-string">&quot;,&quot;</span>pr<span class="hljs-string">&quot;:&quot;</span><span class="hljs-number">1.5</span><span class="hljs-string">&quot;,&quot;</span>cd<span class="hljs-string">&quot;:&quot;</span><span class="hljs-number">24</span><span class="hljs-string">&quot;,&quot;</span>fv<span class="hljs-string">&quot;:&quot;</span><span class="hljs-string">&quot;,&quot;</span>fts<span class="hljs-string">&quot;:&quot;</span><span class="hljs-title class_">Arial</span>,<span class="hljs-title class_">Calibri</span>,<span class="hljs-title class_">Cambria</span>,<span class="hljs-title class_">Consolas</span>,<span class="hljs-title class_">Courier</span>,<span class="hljs-title class_">CourierNew</span>,<span class="hljs-title class_">Georgia</span>,<span class="hljs-title class_">Helvetica</span>,<span class="hljs-title class_">Impact</span>,<span class="hljs-title class_">LucidaConsole</span>,<span class="hljs-title class_">LucidaSansUnicode</span>,<span class="hljs-title class_">MSGothic</span>,<span class="hljs-title class_">MSPGothic</span>,<span class="hljs-title class_">PalatinoLinotype</span>,<span class="hljs-title class_">SegoePrint</span>,<span class="hljs-title class_">SegoeScript</span>,<span class="hljs-title class_">SegoeUI</span>,<span class="hljs-title class_">Tahoma</span>,<span class="hljs-title class_">Times</span>,<span class="hljs-title class_">TimesNewRoman</span>,<span class="hljs-title class_">TrebuchetMS</span>,<span class="hljs-title class_">Verdana</span>,<span class="hljs-title class_">Wingdings</span>,<span class="hljs-title class_">Symbol</span>,<span class="hljs-title class_">Candara</span>,<span class="hljs-title class_">Constantia</span>,<span class="hljs-title class_">Corbel</span>,<span class="hljs-title class_">Ebrima</span>,<span class="hljs-title class_">FangSong</span>,<span class="hljs-title class_">Gabriola</span>,<span class="hljs-title class_">MicrosoftYaHei</span>,<span class="hljs-title class_">MicrosoftYiBaiti</span>,<span class="hljs-title class_">MingLiUExtB</span>,<span class="hljs-title class_">PMingLiUExtB</span>,<span class="hljs-title class_">SimHei</span>,<span class="hljs-title class_">SimSun</span>,<span class="hljs-title class_">SimSunExtB</span><span class="hljs-string">&quot;,&quot;</span>scr<span class="hljs-string">&quot;:&quot;</span>1707x960,1707x912<span class="hljs-string">&quot;,&quot;</span>cpu<span class="hljs-string">&quot;:&quot;</span><span class="hljs-number">8</span><span class="hljs-string">&quot;,&quot;</span>pt<span class="hljs-string">&quot;:&quot;</span><span class="hljs-title class_">Win32</span><span class="hljs-string">&quot;,&quot;</span>tzo<span class="hljs-string">&quot;:&quot;</span><span class="hljs-title class_">Asia</span>/<span class="hljs-title class_">Shanghai</span><span class="hljs-string">&quot;,&quot;</span>lan<span class="hljs-string">&quot;:&quot;</span>zh-<span class="hljs-variable constant_">CN</span><span class="hljs-string">&quot;,&quot;</span>wvr<span class="hljs-string">&quot;:&quot;</span><span class="hljs-title class_">Google</span> <span class="hljs-title class_">Inc</span>. (<span class="hljs-variable constant_">NVIDIA</span>)~<span class="hljs-variable constant_">ANGLE</span> (<span class="hljs-variable constant_">NVIDIA</span>, <span class="hljs-variable constant_">NVIDIA</span> <span class="hljs-title class_">GeForce</span> <span class="hljs-variable constant_">RTX</span> <span class="hljs-number">2060</span> <span class="hljs-title class_">Direct3D11</span> vs_5_0 ps_5_0, <span class="hljs-variable constant_">D3D11</span>)<span class="hljs-string">&quot;,&quot;</span>wdr<span class="hljs-string">&quot;:false,&quot;</span>mem<span class="hljs-string">&quot;:8,&quot;</span>sdv<span class="hljs-string">&quot;:&quot;</span><span class="hljs-number">2.0</span><span class="hljs-string">&quot;,&quot;</span>lns<span class="hljs-string">&quot;:&quot;</span>zh-<span class="hljs-variable constant_">CN</span>,en,en-<span class="hljs-variable constant_">GB</span>,en-<span class="hljs-variable constant_">US</span><span class="hljs-string">&quot;,&quot;</span>tsp<span class="hljs-string">&quot;:&quot;</span><span class="hljs-number">0</span><span class="hljs-string">&quot;&#125;&quot;</span> (只变account) 解决<br>u = n.<span class="hljs-property">urlMap</span> = &#123;<br>    <span class="hljs-string">&quot;report&quot;</span>: <span class="hljs-string">&quot;https://jcapmonitor.m.jd.com/web_jcap_report&quot;</span>,<br>    <span class="hljs-string">&quot;img&quot;</span>: <span class="hljs-string">&quot;https://h5.360buyimg.com/jcap/pc/img/&quot;</span>,<br>    <span class="hljs-string">&quot;iframe&quot;</span>: <span class="hljs-string">&quot;https://h5.360buyimg.com/jcap/html/captchaStorage.html&quot;</span>,<br>    <span class="hljs-string">&quot;js&quot;</span>: <span class="hljs-string">&quot;https://h5.360buyimg.com/jcap/js/&quot;</span>,<br>    <span class="hljs-string">&quot;fp&quot;</span>: <span class="hljs-string">&quot;/cgi-bin/api/fp&quot;</span>,<br>    <span class="hljs-string">&quot;refresh&quot;</span>: <span class="hljs-string">&quot;/cgi-bin/api/refresh&quot;</span>,<br>    <span class="hljs-string">&quot;check&quot;</span>: <span class="hljs-string">&quot;/cgi-bin/api/check&quot;</span>,<br>    <span class="hljs-string">&quot;v&quot;</span>: <span class="hljs-number">20180110</span><br>&#125;（固定）<br>f = n.<span class="hljs-property">platformOS</span> =<span class="hljs-string">&quot;m&quot;</span> （固定）<br>l = n.<span class="hljs-property">tdat_ctx</span> =<span class="hljs-string">&#x27;23130303037303236454145424647333930364347354831453137323142373636383333363233303033333234454636454541433246344546333730344346493333373831483530334233303035313030303&#x27;</span> （固定）<br><br>这里的e是 touche_message<br><span class="hljs-keyword">var</span> t = <span class="hljs-variable language_">window</span>.<span class="hljs-property">localStorage</span>.<span class="hljs-title function_">getItem</span>(e) || <span class="hljs-string">&quot;&#123;&#125;&quot;</span>;<br><br><br><span class="hljs-keyword">return</span> <span class="hljs-title class_">JSON</span>.<span class="hljs-title function_">parse</span>(t)<br>h = &#123;<br>    <span class="hljs-attr">touchList</span>: <span class="hljs-title class_">Object</span>(T.<span class="hljs-property">d</span>)(<span class="hljs-string">&quot;touche_message&quot;</span>)<br>&#125;=[<br>    &#123;<br>        <span class="hljs-string">&quot;eid&quot;</span>: <span class="hljs-string">&quot;click&quot;</span>,<br>        <span class="hljs-string">&quot;did&quot;</span>: <span class="hljs-string">&quot;&quot;</span>,<br>        <span class="hljs-string">&quot;cn&quot;</span>: <span class="hljs-string">&quot;acc-input mobile J_ping&quot;</span>,<br>        <span class="hljs-string">&quot;sx&quot;</span>: <span class="hljs-number">146</span>,<br>        <span class="hljs-string">&quot;sy&quot;</span>: <span class="hljs-number">186</span>,<br>        <span class="hljs-string">&quot;px&quot;</span>: <span class="hljs-number">142</span>,<br>        <span class="hljs-string">&quot;py&quot;</span>: <span class="hljs-number">82</span>,<br>        <span class="hljs-string">&quot;time&quot;</span>: <span class="hljs-number">1695258916201</span> （最早）<br>    &#125;,<br>    &#123;<br>        <span class="hljs-string">&quot;eid&quot;</span>: <span class="hljs-string">&quot;click&quot;</span>,<br>        <span class="hljs-string">&quot;did&quot;</span>: <span class="hljs-string">&quot;&quot;</span>,<br>        <span class="hljs-string">&quot;cn&quot;</span>: <span class="hljs-string">&quot;policy_tip-checkbox&quot;</span>,<br>        <span class="hljs-string">&quot;sx&quot;</span>: <span class="hljs-number">37</span>,<br>        <span class="hljs-string">&quot;sy&quot;</span>: <span class="hljs-number">596</span>,<br>        <span class="hljs-string">&quot;px&quot;</span>: <span class="hljs-number">33</span>,<br>        <span class="hljs-string">&quot;py&quot;</span>: <span class="hljs-number">492</span>,<br>        <span class="hljs-string">&quot;time&quot;</span>: <span class="hljs-number">1695258922162</span><br>    &#125;,<br>    &#123;<br>        <span class="hljs-string">&quot;eid&quot;</span>: <span class="hljs-string">&quot;click&quot;</span>,<br>        <span class="hljs-string">&quot;did&quot;</span>: <span class="hljs-string">&quot;&quot;</span>,<br>        <span class="hljs-string">&quot;cn&quot;</span>: <span class="hljs-string">&quot;getMsg-btn text-btn J_ping timer&quot;</span>,<br>        <span class="hljs-string">&quot;sx&quot;</span>: <span class="hljs-number">546</span>,<br>        <span class="hljs-string">&quot;sy&quot;</span>: <span class="hljs-number">267</span>,<br>        <span class="hljs-string">&quot;px&quot;</span>: <span class="hljs-number">542</span>,<br>        <span class="hljs-string">&quot;py&quot;</span>: <span class="hljs-number">163</span>,<br>        <span class="hljs-string">&quot;time&quot;</span>: <span class="hljs-number">1695258923367</span><br>    &#125;,<br>    &#123;<br>        <span class="hljs-string">&quot;eid&quot;</span>: <span class="hljs-string">&quot;click&quot;</span>,<br>        <span class="hljs-string">&quot;did&quot;</span>: <span class="hljs-string">&quot;&quot;</span>,<br>        <span class="hljs-string">&quot;cn&quot;</span>: <span class="hljs-string">&quot;&quot;</span>,<br>        <span class="hljs-string">&quot;sx&quot;</span>: <span class="hljs-number">322</span>,<br>        <span class="hljs-string">&quot;sy&quot;</span>: <span class="hljs-number">665</span>,<br>        <span class="hljs-string">&quot;px&quot;</span>: <span class="hljs-number">318</span>,<br>        <span class="hljs-string">&quot;py&quot;</span>: <span class="hljs-number">561</span>,<br>        <span class="hljs-string">&quot;time&quot;</span>: <span class="hljs-number">1695258933085</span><br>    &#125;,<br>    &#123;<br>        <span class="hljs-string">&quot;eid&quot;</span>: <span class="hljs-string">&quot;click&quot;</span>,<br>        <span class="hljs-string">&quot;did&quot;</span>: <span class="hljs-string">&quot;&quot;</span>,<br>        <span class="hljs-string">&quot;cn&quot;</span>: <span class="hljs-string">&quot;&quot;</span>,<br>        <span class="hljs-string">&quot;sx&quot;</span>: <span class="hljs-number">271</span>,<br>        <span class="hljs-string">&quot;sy&quot;</span>: <span class="hljs-number">662</span>,<br>        <span class="hljs-string">&quot;px&quot;</span>: <span class="hljs-number">267</span>,<br>        <span class="hljs-string">&quot;py&quot;</span>: <span class="hljs-number">558</span>,<br>        <span class="hljs-string">&quot;time&quot;</span>: <span class="hljs-number">1695259055128</span><br>    &#125;,<br>    &#123;<br>        <span class="hljs-string">&quot;eid&quot;</span>: <span class="hljs-string">&quot;click&quot;</span>,<br>        <span class="hljs-string">&quot;did&quot;</span>: <span class="hljs-string">&quot;&quot;</span>,<br>        <span class="hljs-string">&quot;cn&quot;</span>: <span class="hljs-string">&quot;acc-input mobile J_ping&quot;</span>,<br>        <span class="hljs-string">&quot;sx&quot;</span>: <span class="hljs-number">254</span>,<br>        <span class="hljs-string">&quot;sy&quot;</span>: <span class="hljs-number">188</span>,<br>        <span class="hljs-string">&quot;px&quot;</span>: <span class="hljs-number">250</span>,<br>        <span class="hljs-string">&quot;py&quot;</span>: <span class="hljs-number">84</span>,<br>        <span class="hljs-string">&quot;time&quot;</span>: <span class="hljs-number">1695260364384</span><br>    &#125;,<br>    &#123;<br>        <span class="hljs-string">&quot;eid&quot;</span>: <span class="hljs-string">&quot;click&quot;</span>,<br>        <span class="hljs-string">&quot;did&quot;</span>: <span class="hljs-string">&quot;&quot;</span>,<br>        <span class="hljs-string">&quot;cn&quot;</span>: <span class="hljs-string">&quot;acc-input mobile J_ping&quot;</span>,<br>        <span class="hljs-string">&quot;sx&quot;</span>: <span class="hljs-number">171</span>,<br>        <span class="hljs-string">&quot;sy&quot;</span>: <span class="hljs-number">187</span>,<br>        <span class="hljs-string">&quot;px&quot;</span>: <span class="hljs-number">167</span>,<br>        <span class="hljs-string">&quot;py&quot;</span>: <span class="hljs-number">83</span>,<br>        <span class="hljs-string">&quot;time&quot;</span>: <span class="hljs-number">1695260369505</span><br>    &#125;,<br>    &#123;<br>        <span class="hljs-string">&quot;eid&quot;</span>: <span class="hljs-string">&quot;click&quot;</span>,<br>        <span class="hljs-string">&quot;did&quot;</span>: <span class="hljs-string">&quot;&quot;</span>,<br>        <span class="hljs-string">&quot;cn&quot;</span>: <span class="hljs-string">&quot;policy_tip-checkbox&quot;</span>,<br>        <span class="hljs-string">&quot;sx&quot;</span>: <span class="hljs-number">36</span>,<br>        <span class="hljs-string">&quot;sy&quot;</span>: <span class="hljs-number">600</span>,<br>        <span class="hljs-string">&quot;px&quot;</span>: <span class="hljs-number">32</span>,<br>        <span class="hljs-string">&quot;py&quot;</span>: <span class="hljs-number">496</span>,<br>        <span class="hljs-string">&quot;time&quot;</span>: <span class="hljs-number">1695260371452</span><br>    &#125;,<br>    &#123;<br>        <span class="hljs-string">&quot;eid&quot;</span>: <span class="hljs-string">&quot;click&quot;</span>,<br>        <span class="hljs-string">&quot;did&quot;</span>: <span class="hljs-string">&quot;&quot;</span>,<br>        <span class="hljs-string">&quot;cn&quot;</span>: <span class="hljs-string">&quot;getMsg-btn text-btn J_ping timer&quot;</span>,<br>        <span class="hljs-string">&quot;sx&quot;</span>: <span class="hljs-number">538</span>,<br>        <span class="hljs-string">&quot;sy&quot;</span>: <span class="hljs-number">262</span>,<br>        <span class="hljs-string">&quot;px&quot;</span>: <span class="hljs-number">534</span>,<br>        <span class="hljs-string">&quot;py&quot;</span>: <span class="hljs-number">158</span>,<br>        <span class="hljs-string">&quot;time&quot;</span>: <span class="hljs-number">1695260372637</span><br>    &#125;,<br>    &#123;<br>        <span class="hljs-string">&quot;eid&quot;</span>: <span class="hljs-string">&quot;click&quot;</span>,<br>        <span class="hljs-string">&quot;did&quot;</span>: <span class="hljs-string">&quot;&quot;</span>,<br>        <span class="hljs-string">&quot;cn&quot;</span>: <span class="hljs-string">&quot;&quot;</span>,<br>        <span class="hljs-string">&quot;sx&quot;</span>: <span class="hljs-number">190</span>,<br>        <span class="hljs-string">&quot;sy&quot;</span>: <span class="hljs-number">661</span>,<br>        <span class="hljs-string">&quot;px&quot;</span>: <span class="hljs-number">186</span>,<br>        <span class="hljs-string">&quot;py&quot;</span>: <span class="hljs-number">557</span>,<br>        <span class="hljs-string">&quot;time&quot;</span>: <span class="hljs-number">1695260446609</span> （最后）<br>    &#125;<br>]（<span class="hljs-number">10</span>个，sx,sy,px,py 上下正负<span class="hljs-number">10</span>，time为滑块花费的时间然后取<span class="hljs-number">10</span>次）<br><br>d = <span class="hljs-number">1695208930000</span> （时间戳最后的时间加几秒）  解决<br>p = d % <span class="hljs-number">41</span>  解决<br><br><br><br><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">K</span>(<span class="hljs-params">t</span>) &#123;<br>                <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> e = [<span class="hljs-string">&quot;0&quot;</span>, <span class="hljs-string">&quot;1&quot;</span>, <span class="hljs-string">&quot;2&quot;</span>, <span class="hljs-string">&quot;3&quot;</span>, <span class="hljs-string">&quot;4&quot;</span>, <span class="hljs-string">&quot;5&quot;</span>, <span class="hljs-string">&quot;6&quot;</span>, <span class="hljs-string">&quot;7&quot;</span>, <span class="hljs-string">&quot;8&quot;</span>, <span class="hljs-string">&quot;9&quot;</span>, <span class="hljs-string">&quot;a&quot;</span>, <span class="hljs-string">&quot;b&quot;</span>, <span class="hljs-string">&quot;c&quot;</span>, <span class="hljs-string">&quot;d&quot;</span>, <span class="hljs-string">&quot;e&quot;</span>, <span class="hljs-string">&quot;f&quot;</span>, <span class="hljs-string">&quot;g&quot;</span>, <span class="hljs-string">&quot;h&quot;</span>, <span class="hljs-string">&quot;i&quot;</span>, <span class="hljs-string">&quot;j&quot;</span>, <span class="hljs-string">&quot;k&quot;</span>, <span class="hljs-string">&quot;l&quot;</span>, <span class="hljs-string">&quot;m&quot;</span>, <span class="hljs-string">&quot;n&quot;</span>, <span class="hljs-string">&quot;o&quot;</span>, <span class="hljs-string">&quot;p&quot;</span>, <span class="hljs-string">&quot;q&quot;</span>, <span class="hljs-string">&quot;r&quot;</span>, <span class="hljs-string">&quot;s&quot;</span>, <span class="hljs-string">&quot;t&quot;</span>, <span class="hljs-string">&quot;u&quot;</span>, <span class="hljs-string">&quot;v&quot;</span>, <span class="hljs-string">&quot;w&quot;</span>, <span class="hljs-string">&quot;x&quot;</span>, <span class="hljs-string">&quot;y&quot;</span>, <span class="hljs-string">&quot;z&quot;</span>], n = <span class="hljs-string">&quot;&quot;</span>, r = <span class="hljs-number">0</span>; r &lt; t; r++) &#123;<br>                    n += e[<span class="hljs-title class_">Math</span>.<span class="hljs-title function_">floor</span>(<span class="hljs-number">35</span> * <span class="hljs-title class_">Math</span>.<span class="hljs-title function_">random</span>())]<br>                &#125;<br><span class="hljs-keyword">return</span> n<br>&#125;<br><br><br>t = <span class="hljs-string">&quot;&#123;&quot;</span>ht<span class="hljs-string">&quot;:260,&quot;</span>wt<span class="hljs-string">&quot;:421,&quot;</span>bw<span class="hljs-string">&quot;:86,&quot;</span>sw<span class="hljs-string">&quot;:421,&quot;</span>mw<span class="hljs-string">&quot;:86,&quot;</span>list<span class="hljs-string">&quot;:[[0,0,0]····················[144,-5,383]]&#125;&quot;</span>（传的list不固定，得从py的fastapi那里获取，其他均固定）<br><br>tk = <span class="hljs-title function_">H</span>(d + <span class="hljs-title function_">q</span>(r.<span class="hljs-property">length</span>, <span class="hljs-number">4</span>) + r + <span class="hljs-title function_">q</span>(s.<span class="hljs-property">length</span>, <span class="hljs-number">4</span>) + s + <span class="hljs-title function_">q</span>(t.<span class="hljs-property">length</span>, <span class="hljs-number">6</span>) + t + <span class="hljs-title class_">JSON</span>.<span class="hljs-title function_">stringify</span>(h) + <span class="hljs-title function_">K</span>(p), i, l)<br><br><br><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">getEncryptData</span>(<span class="hljs-params">arg0, arg1</span>) &#123;<br><span class="hljs-keyword">if</span> (<span class="hljs-variable language_">arguments</span>.<span class="hljs-property">length</span> !== <span class="hljs-number">2</span>) &#123;<br><span class="hljs-title function_">throwBindingError</span>(<span class="hljs-string">&#x27;function getEncryptData called with &#x27;</span> + <span class="hljs-variable language_">arguments</span>.<span class="hljs-property">length</span> + <span class="hljs-string">&#x27; arguments, expected 2 args!&#x27;</span>);<br>&#125;<br><span class="hljs-keyword">var</span> arg0Wired = argType0.<span class="hljs-title function_">toWireType</span>(<span class="hljs-literal">null</span>, arg0); <span class="hljs-comment">// std::string</span><br><span class="hljs-keyword">var</span> arg1Wired = argType1.<span class="hljs-title function_">toWireType</span>(<span class="hljs-literal">null</span>, arg1); <span class="hljs-comment">// std::string</span><br><span class="hljs-keyword">var</span> rv = <span class="hljs-title function_">invoker</span>(fn, arg0Wired, arg1Wired);<br><span class="hljs-title function_">arg0Wired_dtor</span>(arg0Wired); <span class="hljs-comment">// std::string</span><br><span class="hljs-title function_">arg1Wired_dtor</span>(arg1Wired); <span class="hljs-comment">// std::string</span><br><span class="hljs-keyword">var</span> ret = retType.<span class="hljs-title function_">fromWireType</span>(rv);<br><span class="hljs-keyword">return</span> ret;<br>&#125;<br><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">H</span>(<span class="hljs-params">t, e, n</span>) &#123;<br>                <span class="hljs-keyword">var</span> r = t<br>                  , o = i;<br>                e &amp;&amp; (a = e);<br>                <span class="hljs-keyword">try</span> &#123;<br>                    <span class="hljs-keyword">return</span> n ? <span class="hljs-title class_">JSON</span>.<span class="hljs-title function_">stringify</span>(<span class="hljs-variable language_">window</span>.<span class="hljs-property">f</span>.<span class="hljs-title function_">getEncryptData</span>(r, n)) : <span class="hljs-title function_">s</span>(r, o)<br>                &#125; <span class="hljs-keyword">catch</span> (t) &#123;<br>                    <span class="hljs-keyword">return</span> <span class="hljs-title function_">s</span>(r, o)<br>                &#125;<br>&#125;<br><br><br>这里的H的参数t= <span class="hljs-string">&quot;16952089300000091fIS8JQABAAAIPtAi5FkAMHu---j78gy-GB0Hi1vlU50IYL3V0VefS5LFuK1KAf1wE0S8hgdj3af0wjXtsEplgAAAAAA0016taJvP8ua60xCxdby000000&#123;&quot;</span>touchList<span class="hljs-string">&quot;:[&#123;&quot;</span>eid<span class="hljs-string">&quot;:&quot;</span>click<span class="hljs-string">&quot;,&quot;</span>did<span class="hljs-string">&quot;:&quot;</span><span class="hljs-string">&quot;,&quot;</span>cn<span class="hljs-string">&quot;:&quot;</span>acc-input mobile J_ping<span class="hljs-string">&quot;,&quot;</span>sx<span class="hljs-string">&quot;:289,&quot;</span>sy<span class="hljs-string">&quot;:196,&quot;</span>px<span class="hljs-string">&quot;:285,&quot;</span>py<span class="hljs-string">&quot;:92,&quot;</span>time<span class="hljs-string">&quot;:1695201591043&#125;,&#123;&quot;</span>eid<span class="hljs-string">&quot;:&quot;</span>click<span class="hljs-string">&quot;,&quot;</span>did<span class="hljs-string">&quot;:&quot;</span><span class="hljs-string">&quot;,&quot;</span>cn<span class="hljs-string">&quot;:&quot;</span>policy_tip-checkbox<span class="hljs-string">&quot;,&quot;</span>sx<span class="hljs-string">&quot;:53,&quot;</span>sy<span class="hljs-string">&quot;:596,&quot;</span>px<span class="hljs-string">&quot;:49,&quot;</span>py<span class="hljs-string">&quot;:492,&quot;</span>time<span class="hljs-string">&quot;:1695201595164&#125;,&#123;&quot;</span>eid<span class="hljs-string">&quot;:&quot;</span>click<span class="hljs-string">&quot;,&quot;</span>did<span class="hljs-string">&quot;:&quot;</span><span class="hljs-string">&quot;,&quot;</span>cn<span class="hljs-string">&quot;:&quot;</span>getMsg-btn text-btn J_ping timer<span class="hljs-string">&quot;,&quot;</span>sx<span class="hljs-string">&quot;:586,&quot;</span>sy<span class="hljs-string">&quot;:256,&quot;</span>px<span class="hljs-string">&quot;:582,&quot;</span>py<span class="hljs-string">&quot;:152,&quot;</span>time<span class="hljs-string">&quot;:1695201598058&#125;,&#123;&quot;</span>eid<span class="hljs-string">&quot;:&quot;</span>click<span class="hljs-string">&quot;,&quot;</span>did<span class="hljs-string">&quot;:&quot;</span><span class="hljs-string">&quot;,&quot;</span>cn<span class="hljs-string">&quot;:&quot;</span><span class="hljs-string">&quot;,&quot;</span>sx<span class="hljs-string">&quot;:304,&quot;</span>sy<span class="hljs-string">&quot;:659,&quot;</span>px<span class="hljs-string">&quot;:300,&quot;</span>py<span class="hljs-string">&quot;:555,&quot;</span>time<span class="hljs-string">&quot;:1695201613573&#125;,&#123;&quot;</span>eid<span class="hljs-string">&quot;:&quot;</span>click<span class="hljs-string">&quot;,&quot;</span>did<span class="hljs-string">&quot;:&quot;</span><span class="hljs-string">&quot;,&quot;</span>cn<span class="hljs-string">&quot;:&quot;</span>acc-input mobile J_ping<span class="hljs-string">&quot;,&quot;</span>sx<span class="hljs-string">&quot;:284,&quot;</span>sy<span class="hljs-string">&quot;:190,&quot;</span>px<span class="hljs-string">&quot;:280,&quot;</span>py<span class="hljs-string">&quot;:86,&quot;</span>time<span class="hljs-string">&quot;:1695208898504&#125;,&#123;&quot;</span>eid<span class="hljs-string">&quot;:&quot;</span>click<span class="hljs-string">&quot;,&quot;</span>did<span class="hljs-string">&quot;:&quot;</span><span class="hljs-string">&quot;,&quot;</span>cn<span class="hljs-string">&quot;:&quot;</span>policy_tip-checkbox<span class="hljs-string">&quot;,&quot;</span>sx<span class="hljs-string">&quot;:32,&quot;</span>sy<span class="hljs-string">&quot;:596,&quot;</span>px<span class="hljs-string">&quot;:28,&quot;</span>py<span class="hljs-string">&quot;:492,&quot;</span>time<span class="hljs-string">&quot;:1695208903034&#125;,&#123;&quot;</span>eid<span class="hljs-string">&quot;:&quot;</span>click<span class="hljs-string">&quot;,&quot;</span>did<span class="hljs-string">&quot;:&quot;</span><span class="hljs-string">&quot;,&quot;</span>cn<span class="hljs-string">&quot;:&quot;</span>page<span class="hljs-string">&quot;,&quot;</span>sx<span class="hljs-string">&quot;:364,&quot;</span>sy<span class="hljs-string">&quot;:130,&quot;</span>px<span class="hljs-string">&quot;:360,&quot;</span>py<span class="hljs-string">&quot;:26,&quot;</span>time<span class="hljs-string">&quot;:1695208910828&#125;,&#123;&quot;</span>eid<span class="hljs-string">&quot;:&quot;</span>click<span class="hljs-string">&quot;,&quot;</span>did<span class="hljs-string">&quot;:&quot;</span><span class="hljs-string">&quot;,&quot;</span>cn<span class="hljs-string">&quot;:&quot;</span>getMsg-btn text-btn J_ping timer<span class="hljs-string">&quot;,&quot;</span>sx<span class="hljs-string">&quot;:562,&quot;</span>sy<span class="hljs-string">&quot;:254,&quot;</span>px<span class="hljs-string">&quot;:558,&quot;</span>py<span class="hljs-string">&quot;:150,&quot;</span>time<span class="hljs-string">&quot;:1695208910856&#125;]&#125;foapmqy5ck2e&quot;</span><br><br>e = <span class="hljs-number">99992</span> <br><br>n =<span class="hljs-string">&quot;23130303037303236454145424647333930364347354831453137323142373636383333363233303033333234454636454541433246344546333730344346493333373831483530334233303035313030303&quot;</span> （固定）<br><br></code></pre></td></tr></table></figure>
+
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br></pre></td><td class="code"><pre><code class="hljs javascript">鼠标事件<br><br><br><br>&#123;<br>	<span class="hljs-attr">key</span>: <span class="hljs-string">&quot;start&quot;</span>,<br>	<span class="hljs-attr">value</span>: <span class="hljs-keyword">function</span>(<span class="hljs-params">t</span>) &#123;<br>		G.<span class="hljs-title function_">doStartCheck</span>(),<br>		<span class="hljs-variable language_">this</span>.<span class="hljs-property">spImg</span> = <span class="hljs-string">&quot;https://h5.360buyimg.com/jcap/img_20190409/right-white.png&quot;</span>,<br>		<span class="hljs-variable language_">this</span>.<span class="hljs-property">moveX</span> = <span class="hljs-title class_">Object</span>(T.<span class="hljs-property">e</span>)(t), <span class="hljs-comment">//160</span><br>		<span class="hljs-variable language_">this</span>.<span class="hljs-property">moveY</span> = <span class="hljs-title class_">Object</span>(T.<span class="hljs-property">f</span>)(t), <span class="hljs-comment">//570</span><br>		<span class="hljs-variable language_">this</span>.<span class="hljs-property">lastTime</span> = <span class="hljs-title class_">Date</span>.<span class="hljs-title function_">now</span>(),<br>		<span class="hljs-variable language_">this</span>.<span class="hljs-property">xyList</span>.<span class="hljs-title function_">push</span>([<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>]),<br>		t.<span class="hljs-title function_">stopPropagation</span>(),<br>		t.<span class="hljs-property">cancelable</span> &amp;&amp; t.<span class="hljs-title function_">preventDefault</span>()<br>	&#125;<br>&#125;<br><br><br>&#123;<br>&#123;<span class="hljs-attr">key</span>: <span class="hljs-string">&quot;move&quot;</span>,<br><span class="hljs-attr">value</span>: <span class="hljs-keyword">function</span>(<span class="hljs-params">t</span>) &#123;<br>	<span class="hljs-keyword">var</span> e = <span class="hljs-title class_">Object</span>(T.<span class="hljs-property">e</span>)(t) - <span class="hljs-variable language_">this</span>.<span class="hljs-property">moveX</span><br>	  , n = <span class="hljs-title class_">Object</span>(T.<span class="hljs-property">f</span>)(t) - <span class="hljs-variable language_">this</span>.<span class="hljs-property">moveY</span>;<br>	<span class="hljs-number">0</span> &lt;= e &amp;&amp; e &lt; <span class="hljs-variable language_">this</span>.<span class="hljs-property">$refs</span>.<span class="hljs-property">cpc_img</span>.<span class="hljs-property">width</span> - <span class="hljs-variable language_">this</span>.<span class="hljs-property">$refs</span>.<span class="hljs-property">move_img</span>.<span class="hljs-property">width</span> &amp;&amp; (<span class="hljs-variable language_">this</span>.<span class="hljs-property">spMsg</span> = <span class="hljs-variable language_">this</span>.<span class="hljs-property">langMap</span>.<span class="hljs-property">code_23</span>,<br>	<span class="hljs-variable language_">this</span>.<span class="hljs-property">$refs</span>.<span class="hljs-property">move_img</span>.<span class="hljs-property">style</span>.<span class="hljs-property">left</span> = e + <span class="hljs-string">&quot;px&quot;</span>,<br>	<span class="hljs-variable language_">this</span>.<span class="hljs-property">$refs</span>.<span class="hljs-property">small_img</span>.<span class="hljs-property">style</span>.<span class="hljs-property">left</span> = e + <span class="hljs-string">&quot;px&quot;</span>,<br>	<span class="hljs-variable language_">this</span>.<span class="hljs-property">$refs</span>.<span class="hljs-property">bg_blue</span>.<span class="hljs-property">style</span>.<span class="hljs-property">width</span> = e + <span class="hljs-number">20</span> + <span class="hljs-string">&quot;px&quot;</span>,<br>	<span class="hljs-variable language_">this</span>.<span class="hljs-property">$refs</span>.<span class="hljs-property">sp_msg</span>.<span class="hljs-title function_">getBoundingClientRect</span>().<span class="hljs-property">left</span>,<br>	<span class="hljs-variable language_">this</span>.<span class="hljs-property">$refs</span>.<span class="hljs-property">sp_msg</span>.<span class="hljs-title function_">getBoundingClientRect</span>().<span class="hljs-property">top</span>,<br>	<span class="hljs-variable language_">this</span>.<span class="hljs-property">xyList</span>.<span class="hljs-title function_">push</span>([<span class="hljs-title class_">Number</span>(e.<span class="hljs-title function_">toFixed</span>(<span class="hljs-number">2</span>)), <span class="hljs-title class_">Number</span>(n.<span class="hljs-title function_">toFixed</span>(<span class="hljs-number">2</span>)), <span class="hljs-title class_">Date</span>.<span class="hljs-title function_">now</span>() - <span class="hljs-variable language_">this</span>.<span class="hljs-property">lastTime</span>]),<br>	<span class="hljs-variable language_">this</span>.<span class="hljs-property">lastTime</span> = <span class="hljs-title class_">Date</span>.<span class="hljs-title function_">now</span>()),<br>	t.<span class="hljs-title function_">stopPropagation</span>(),<br>	t.<span class="hljs-property">cancelable</span> &amp;&amp; t.<span class="hljs-title function_">preventDefault</span>()<br>&#125;&#125;<br><br>这里主要拿到xyList这个表。是由x，y，t<br>滑满则为一般分为<span class="hljs-number">400</span>，也就是<span class="hljs-number">400</span>/<span class="hljs-number">275</span> = <span class="hljs-number">1.45</span>每份<br>也就是 <span class="hljs-number">1.45</span>*滑动的距离 = 多少分成多少份<br>x 的格式为滑动距离<br>y 可以伪造范围为正负<span class="hljs-number">10</span>左右<br>t 花费时间 一开始为<span class="hljs-number">1</span>-4s左右，后来接近抖动的时候赋值<span class="hljs-number">30</span>-350ms 这里跳动很大的，有时候<span class="hljs-number">30</span>，有时候<span class="hljs-number">170</span>，又回归到<span class="hljs-number">30</span>,这样的抖动<br><br><br><br><br><br><br><br><br>g  = <span class="hljs-string">&quot;&#123;&quot;</span>account<span class="hljs-string">&quot;:&quot;</span><span class="hljs-number">15015344889</span><span class="hljs-string">&quot;,&quot;</span>ccode<span class="hljs-string">&quot;:&quot;</span><span class="hljs-number">86</span><span class="hljs-string">&quot;,&quot;</span>capfp<span class="hljs-string">&quot;:&quot;</span>m14jVxG3CClLHe5yUTpVWEeiwjCIAet-<span class="hljs-title class_">ObrCbyZjmQW9F3</span>dPWaxZgQBcf8eaHlgocYg_PNVSnnKkUhRwXux87w==<span class="hljs-string">&quot;,&quot;</span>cvs<span class="hljs-string">&quot;:&quot;</span>a04d95f1d97489b23cce20bebd6d6d6b<span class="hljs-string">&quot;,&quot;</span>wgl<span class="hljs-string">&quot;:&quot;</span>0ef36cfe7a17521389b08af14c0554d0<span class="hljs-string">&quot;,&quot;</span>pr<span class="hljs-string">&quot;:&quot;</span><span class="hljs-number">1.5</span><span class="hljs-string">&quot;,&quot;</span>cd<span class="hljs-string">&quot;:&quot;</span><span class="hljs-number">24</span><span class="hljs-string">&quot;,&quot;</span>fv<span class="hljs-string">&quot;:&quot;</span><span class="hljs-string">&quot;,&quot;</span>fts<span class="hljs-string">&quot;:&quot;</span><span class="hljs-title class_">Arial</span>,<span class="hljs-title class_">Calibri</span>,<span class="hljs-title class_">Cambria</span>,<span class="hljs-title class_">Consolas</span>,<span class="hljs-title class_">Courier</span>,<span class="hljs-title class_">CourierNew</span>,<span class="hljs-title class_">Georgia</span>,<span class="hljs-title class_">Helvetica</span>,<span class="hljs-title class_">Impact</span>,<span class="hljs-title class_">LucidaConsole</span>,<span class="hljs-title class_">LucidaSansUnicode</span>,<span class="hljs-title class_">MSGothic</span>,<span class="hljs-title class_">MSPGothic</span>,<span class="hljs-title class_">PalatinoLinotype</span>,<span class="hljs-title class_">SegoePrint</span>,<span class="hljs-title class_">SegoeScript</span>,<span class="hljs-title class_">SegoeUI</span>,<span class="hljs-title class_">Tahoma</span>,<span class="hljs-title class_">Times</span>,<span class="hljs-title class_">TimesNewRoman</span>,<span class="hljs-title class_">TrebuchetMS</span>,<span class="hljs-title class_">Verdana</span>,<span class="hljs-title class_">Wingdings</span>,<span class="hljs-title class_">Symbol</span>,<span class="hljs-title class_">Candara</span>,<span class="hljs-title class_">Constantia</span>,<span class="hljs-title class_">Corbel</span>,<span class="hljs-title class_">Ebrima</span>,<span class="hljs-title class_">FangSong</span>,<span class="hljs-title class_">Gabriola</span>,<span class="hljs-title class_">MicrosoftYaHei</span>,<span class="hljs-title class_">MicrosoftYiBaiti</span>,<span class="hljs-title class_">MingLiUExtB</span>,<span class="hljs-title class_">PMingLiUExtB</span>,<span class="hljs-title class_">SimHei</span>,<span class="hljs-title class_">SimSun</span>,<span class="hljs-title class_">SimSunExtB</span><span class="hljs-string">&quot;,&quot;</span>scr<span class="hljs-string">&quot;:&quot;</span>1707x960,1707x912<span class="hljs-string">&quot;,&quot;</span>cpu<span class="hljs-string">&quot;:&quot;</span><span class="hljs-number">8</span><span class="hljs-string">&quot;,&quot;</span>pt<span class="hljs-string">&quot;:&quot;</span><span class="hljs-title class_">Win32</span><span class="hljs-string">&quot;,&quot;</span>tzo<span class="hljs-string">&quot;:&quot;</span><span class="hljs-title class_">Asia</span>/<span class="hljs-title class_">Shanghai</span><span class="hljs-string">&quot;,&quot;</span>lan<span class="hljs-string">&quot;:&quot;</span>zh-<span class="hljs-variable constant_">CN</span><span class="hljs-string">&quot;,&quot;</span>wvr<span class="hljs-string">&quot;:&quot;</span><span class="hljs-title class_">Google</span> <span class="hljs-title class_">Inc</span>. (<span class="hljs-variable constant_">NVIDIA</span>)~<span class="hljs-variable constant_">ANGLE</span> (<span class="hljs-variable constant_">NVIDIA</span>, <span class="hljs-variable constant_">NVIDIA</span> <span class="hljs-title class_">GeForce</span> <span class="hljs-variable constant_">RTX</span> <span class="hljs-number">2060</span> <span class="hljs-title class_">Direct3D11</span> vs_5_0 ps_5_0, <span class="hljs-variable constant_">D3D11</span>)<span class="hljs-string">&quot;,&quot;</span>wdr<span class="hljs-string">&quot;:false,&quot;</span>mem<span class="hljs-string">&quot;:8,&quot;</span>sdv<span class="hljs-string">&quot;:&quot;</span><span class="hljs-number">2.0</span><span class="hljs-string">&quot;,&quot;</span>lns<span class="hljs-string">&quot;:&quot;</span>zh-<span class="hljs-variable constant_">CN</span>,en,en-<span class="hljs-variable constant_">GB</span>,en-<span class="hljs-variable constant_">US</span><span class="hljs-string">&quot;,&quot;</span>tsp<span class="hljs-string">&quot;:&quot;</span><span class="hljs-number">0</span><span class="hljs-string">&quot;&#125;&quot;</span><br><br>si的值 <span class="hljs-string">&quot;Xg0aRAABAAAFmK5kzRwAMKVa_Y9J2O3Ykj5TQDFqCdp-zeR8FRzerqJXwRqY8Wm-In2e_ikG492CF27dIzauDgAAAAA&quot;</span>  由<span class="hljs-attr">https</span>:<span class="hljs-comment">//jcap.m.jd.com/cgi-bin/api/fp响应中得到  </span><br><br>tk = <span class="hljs-string">&quot;&#123;&quot;</span>data<span class="hljs-string">&quot;:&quot;</span><span class="hljs-title class_">SrI7IVcFlDJKHcJF9S2</span>uIY-····<span class="hljs-string">&quot; 解决</span><br><span class="hljs-string"></span><br><span class="hljs-string"></span><br><span class="hljs-string"></span><br><span class="hljs-string">getSensorInfo: function(e, t) &#123;</span><br><span class="hljs-string">	try &#123;</span><br><span class="hljs-string">		if (t &amp;&amp; &quot;</span>string<span class="hljs-string">&quot; == typeof t) &#123;</span><br><span class="hljs-string">			var n = JSON.parse(e)</span><br><span class="hljs-string">			  , r = JSON.parse(t);</span><br><span class="hljs-string">			return r &amp;&amp; r.sen &amp;&amp; (n.sen = r.sen),</span><br><span class="hljs-string">			JSON.stringify(n)</span><br><span class="hljs-string">		&#125;</span><br><span class="hljs-string">		return e</span><br><span class="hljs-string">	&#125; catch (t) &#123;</span><br><span class="hljs-string">		return e</span><br><span class="hljs-string">	&#125;</span><br><span class="hljs-string">&#125;,</span><br><span class="hljs-string"></span><br><span class="hljs-string"></span><br><span class="hljs-string"></span><br><span class="hljs-string">	var r = n.sessionId</span><br><span class="hljs-string">	  , o = n.language</span><br><span class="hljs-string">	  , i = n.tdat_code</span><br><span class="hljs-string">	  , a = n.host</span><br><span class="hljs-string">	  , s = n.st </span><br><span class="hljs-string">	  , c = n.devcInfo</span><br><span class="hljs-string">	  , u = n.urlMap</span><br><span class="hljs-string">	  , f = n.platformOS</span><br><span class="hljs-string">	  , l = n.tdat_ctx;</span><br><span class="hljs-string">	t = encodeURI(t);</span><br><span class="hljs-string">	var d = Date.parse(new Date + &quot;</span><span class="hljs-string">&quot;)</span><br><span class="hljs-string">	  , p = d % 41</span><br><span class="hljs-string">	  , h = &#123;</span><br><span class="hljs-string">		touchList: Object(T.d)(&quot;</span>touche_message<span class="hljs-string">&quot;)</span><br><span class="hljs-string">	&#125;</span><br><span class="hljs-string">	  , g = G.getSensorInfo(c, e)  // e =&quot;</span><span class="hljs-string">&quot;</span><br><span class="hljs-string">	  , v = &#123;</span><br><span class="hljs-string">		si: r, </span><br><span class="hljs-string">		lang: o,</span><br><span class="hljs-string">		tk: H(d + q(r.length, 4) + r + q(s.length, 4) + s + q(t.length, 6) + t + JSON.stringify(h) + K(p), i, l),</span><br><span class="hljs-string">		ct: H(K(d % 19) + q(r.length, 4) + r + g + d, i, l),</span><br><span class="hljs-string">		version: 2,</span><br><span class="hljs-string">		client: f</span><br><span class="hljs-string"></span><br><span class="hljs-string"></span><br><span class="hljs-string"></span><br><span class="hljs-string">流程 发送第一个check  拿到对应的图片</span><br><span class="hljs-string"></span><br><span class="hljs-string">第二个check 则请求验证</span><br><span class="hljs-string"></span><br></code></pre></td></tr></table></figure>
+
+
+<p>分析第一次check</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><br>t = <span class="hljs-string">&quot;&quot;</span><br><br>touchList =[<br>    &#123;<br>        <span class="hljs-string">&quot;eid&quot;</span>: <span class="hljs-string">&quot;click&quot;</span>,<br>        <span class="hljs-string">&quot;did&quot;</span>: <span class="hljs-string">&quot;&quot;</span>,<br>        <span class="hljs-string">&quot;cn&quot;</span>: <span class="hljs-string">&quot;acc-input mobile J_ping&quot;</span>,<br>        <span class="hljs-string">&quot;sx&quot;</span>: <span class="hljs-number">252</span>,<br>        <span class="hljs-string">&quot;sy&quot;</span>: <span class="hljs-number">198</span>,<br>        <span class="hljs-string">&quot;px&quot;</span>: <span class="hljs-number">248</span>,<br>        <span class="hljs-string">&quot;py&quot;</span>: <span class="hljs-number">94</span>,<br>        <span class="hljs-string">&quot;time&quot;</span>: <span class="hljs-number">1695304768930</span><br>    &#125;,<br>    &#123;<br>        <span class="hljs-string">&quot;eid&quot;</span>: <span class="hljs-string">&quot;click&quot;</span>,<br>        <span class="hljs-string">&quot;did&quot;</span>: <span class="hljs-string">&quot;&quot;</span>,<br>        <span class="hljs-string">&quot;cn&quot;</span>: <span class="hljs-string">&quot;policy_tip-checkbox&quot;</span>,<br>        <span class="hljs-string">&quot;sx&quot;</span>: <span class="hljs-number">35</span>,<br>        <span class="hljs-string">&quot;sy&quot;</span>: <span class="hljs-number">601</span>,<br>        <span class="hljs-string">&quot;px&quot;</span>: <span class="hljs-number">31</span>,<br>        <span class="hljs-string">&quot;py&quot;</span>: <span class="hljs-number">497</span>,<br>        <span class="hljs-string">&quot;time&quot;</span>: <span class="hljs-number">1695304773658</span><br>    &#125;,<br>    &#123;<br>        <span class="hljs-string">&quot;eid&quot;</span>: <span class="hljs-string">&quot;click&quot;</span>,<br>        <span class="hljs-string">&quot;did&quot;</span>: <span class="hljs-string">&quot;&quot;</span>,<br>        <span class="hljs-string">&quot;cn&quot;</span>: <span class="hljs-string">&quot;getMsg-btn text-btn J_ping timer&quot;</span>,<br>        <span class="hljs-string">&quot;sx&quot;</span>: <span class="hljs-number">370</span>,<br>        <span class="hljs-string">&quot;sy&quot;</span>: <span class="hljs-number">261</span>,<br>        <span class="hljs-string">&quot;px&quot;</span>: <span class="hljs-number">366</span>,<br>        <span class="hljs-string">&quot;py&quot;</span>: <span class="hljs-number">157</span>,<br>        <span class="hljs-string">&quot;time&quot;</span>: <span class="hljs-number">1695304777061</span><br>    &#125;<br>]<br><br>g =<span class="hljs-string">&quot;&#123;&quot;</span>account<span class="hljs-string">&quot;:&quot;</span><span class="hljs-number">15695302611</span><span class="hljs-string">&quot;,&quot;</span>ccode<span class="hljs-string">&quot;:&quot;</span><span class="hljs-number">86</span><span class="hljs-string">&quot;,&quot;</span>capfp<span class="hljs-string">&quot;:&#123;&#125;,&quot;</span>cvs<span class="hljs-string">&quot;:&quot;</span>a04d95f1d97489b23cce20bebd6d6d6b<span class="hljs-string">&quot;,&quot;</span>wgl<span class="hljs-string">&quot;:&quot;</span>0ef36cfe7a17521389b08af14c0554d0<span class="hljs-string">&quot;,&quot;</span>pr<span class="hljs-string">&quot;:&quot;</span><span class="hljs-number">1.5</span><span class="hljs-string">&quot;,&quot;</span>cd<span class="hljs-string">&quot;:&quot;</span><span class="hljs-number">24</span><span class="hljs-string">&quot;,&quot;</span>fv<span class="hljs-string">&quot;:&quot;</span><span class="hljs-string">&quot;,&quot;</span>fts<span class="hljs-string">&quot;:&quot;</span><span class="hljs-title class_">Arial</span>,<span class="hljs-title class_">Calibri</span>,<span class="hljs-title class_">Cambria</span>,<span class="hljs-title class_">Consolas</span>,<span class="hljs-title class_">Courier</span>,<span class="hljs-title class_">CourierNew</span>,<span class="hljs-title class_">Georgia</span>,<span class="hljs-title class_">Helvetica</span>,<span class="hljs-title class_">Impact</span>,<span class="hljs-title class_">LucidaConsole</span>,<span class="hljs-title class_">LucidaSansUnicode</span>,<span class="hljs-title class_">MSGothic</span>,<span class="hljs-title class_">MSPGothic</span>,<span class="hljs-title class_">PalatinoLinotype</span>,<span class="hljs-title class_">SegoePrint</span>,<span class="hljs-title class_">SegoeScript</span>,<span class="hljs-title class_">SegoeUI</span>,<span class="hljs-title class_">Tahoma</span>,<span class="hljs-title class_">Times</span>,<span class="hljs-title class_">TimesNewRoman</span>,<span class="hljs-title class_">TrebuchetMS</span>,<span class="hljs-title class_">Verdana</span>,<span class="hljs-title class_">Wingdings</span>,<span class="hljs-title class_">Symbol</span>,<span class="hljs-title class_">Candara</span>,<span class="hljs-title class_">Constantia</span>,<span class="hljs-title class_">Corbel</span>,<span class="hljs-title class_">Ebrima</span>,<span class="hljs-title class_">FangSong</span>,<span class="hljs-title class_">Gabriola</span>,<span class="hljs-title class_">MicrosoftYaHei</span>,<span class="hljs-title class_">MicrosoftYiBaiti</span>,<span class="hljs-title class_">MingLiUExtB</span>,<span class="hljs-title class_">PMingLiUExtB</span>,<span class="hljs-title class_">SimHei</span>,<span class="hljs-title class_">SimSun</span>,<span class="hljs-title class_">SimSunExtB</span><span class="hljs-string">&quot;,&quot;</span>scr<span class="hljs-string">&quot;:&quot;</span>1707x960,1707x912<span class="hljs-string">&quot;,&quot;</span>cpu<span class="hljs-string">&quot;:&quot;</span><span class="hljs-number">8</span><span class="hljs-string">&quot;,&quot;</span>pt<span class="hljs-string">&quot;:&quot;</span><span class="hljs-title class_">Win32</span><span class="hljs-string">&quot;,&quot;</span>tzo<span class="hljs-string">&quot;:&quot;</span><span class="hljs-title class_">Asia</span>/<span class="hljs-title class_">Shanghai</span><span class="hljs-string">&quot;,&quot;</span>lan<span class="hljs-string">&quot;:&quot;</span>zh-<span class="hljs-variable constant_">CN</span><span class="hljs-string">&quot;,&quot;</span>wvr<span class="hljs-string">&quot;:&quot;</span><span class="hljs-title class_">Google</span> <span class="hljs-title class_">Inc</span>. (<span class="hljs-variable constant_">NVIDIA</span>)~<span class="hljs-variable constant_">ANGLE</span> (<span class="hljs-variable constant_">NVIDIA</span>, <span class="hljs-variable constant_">NVIDIA</span> <span class="hljs-title class_">GeForce</span> <span class="hljs-variable constant_">RTX</span> <span class="hljs-number">2060</span> <span class="hljs-title class_">Direct3D11</span> vs_5_0 ps_5_0, <span class="hljs-variable constant_">D3D11</span>)<span class="hljs-string">&quot;,&quot;</span>wdr<span class="hljs-string">&quot;:false,&quot;</span>mem<span class="hljs-string">&quot;:8,&quot;</span>sdv<span class="hljs-string">&quot;:&quot;</span><span class="hljs-number">2.0</span><span class="hljs-string">&quot;,&quot;</span>lns<span class="hljs-string">&quot;:&quot;</span>zh-<span class="hljs-variable constant_">CN</span>,en,en-<span class="hljs-variable constant_">GB</span>,en-<span class="hljs-variable constant_">US</span><span class="hljs-string">&quot;,&quot;</span>tsp<span class="hljs-string">&quot;:&quot;</span><span class="hljs-number">0</span><span class="hljs-string">&quot;&#125;&quot;</span> 与第二次一样<br><br><span class="hljs-keyword">var</span> r = n.<span class="hljs-property">sessionId</span> <br>	  , o = n.<span class="hljs-property">language</span><br>	  , i = n.<span class="hljs-property">tdat_code</span><br>	  , a = n.<span class="hljs-property">host</span><br>	  , s = n.<span class="hljs-property">st</span> <br>	  , c = n.<span class="hljs-property">devcInfo</span><br>	  , u = n.<span class="hljs-property">urlMap</span><br>	  , f = n.<span class="hljs-property">platformOS</span><br>	  , l = n.<span class="hljs-property">tdat_ctx</span>;<br>	t = <span class="hljs-built_in">encodeURI</span>(t);<br>	<span class="hljs-keyword">var</span> d = <span class="hljs-title class_">Date</span>.<span class="hljs-title function_">parse</span>(<span class="hljs-keyword">new</span> <span class="hljs-title class_">Date</span> + <span class="hljs-string">&quot;&quot;</span>)<br>	  , p = d % <span class="hljs-number">41</span><br>	  , h = &#123;<br>		<span class="hljs-attr">touchList</span>: <span class="hljs-title class_">Object</span>(T.<span class="hljs-property">d</span>)(<span class="hljs-string">&quot;touche_message&quot;</span>)<br>	&#125;<br>	  , g = G.<span class="hljs-title function_">getSensorInfo</span>(c, e)  <span class="hljs-comment">// e =&quot;&quot;</span><br>	  , v = &#123;<br>		<span class="hljs-attr">si</span>: r, <br>		<span class="hljs-attr">lang</span>: o,<br>		<span class="hljs-attr">tk</span>: <span class="hljs-title function_">H</span>(d + <span class="hljs-title function_">q</span>(r.<span class="hljs-property">length</span>, <span class="hljs-number">4</span>) + r + <span class="hljs-title function_">q</span>(s.<span class="hljs-property">length</span>, <span class="hljs-number">4</span>) + s + <span class="hljs-title function_">q</span>(t.<span class="hljs-property">length</span>, <span class="hljs-number">6</span>) + t + <span class="hljs-title class_">JSON</span>.<span class="hljs-title function_">stringify</span>(h) + <span class="hljs-title function_">K</span>(p), i, l),<br>		<span class="hljs-attr">ct</span>: <span class="hljs-title function_">H</span>(<span class="hljs-title function_">K</span>(d % <span class="hljs-number">19</span>) + <span class="hljs-title function_">q</span>(r.<span class="hljs-property">length</span>, <span class="hljs-number">4</span>) + r + g + d, i, l),<br>		<span class="hljs-attr">version</span>: <span class="hljs-number">2</span>,<br>		<span class="hljs-attr">client</span>: f<br></code></pre></td></tr></table></figure>
+
+
+<p>第二次check</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><br><br>t = 坐标轨迹<br><span class="hljs-string">&quot;%7B%22ht%22:222,%22wt%22:359,%22bw%22:73,%22sw%22:359,%22mw%22:73,%22list%22:%5B%5B0,0,0%5D,%5B1,0,111%5D,%5B2,0,8%5D,%5B2,0,4%5D,%5B3,0,10%5D,%5B4,0,4%5D,%5B4,0,3%5D,%5B5,0,4%5D,%5B6,0,3%5D,%5B6,0,3%5D,%5B7,0,6%5D,%5B8,0,1%5D,%5B8,0,3%5D,%5B9,0,1%5D,%5B10,0,3%5D,%5B10,0,1%5D,%5B11,0,3%5D,%5B12,0,2%5D,%5B12,0,2%5D,%5B13,0,0%5D,%5B14,0,2%5D,%5B14,0,4%5D,%5B15,0,2%5D,%5B16,0,0%5D,%5B16,0,3%5D,%5B17,0,1%5D,%5B18,0,2%5D,%5B18,0,3%5D,%5B19,0,5%5D,%5B20,0,1%5D,%5B20,0,1%5D,%5B21,0,4%5D,%5B22,0,3%5D,%5B22,0,7%5D,%5B23,0,6%5D,%5B24,0,4%5D,%5B24,0,7%5D,%5B25,0,6%5D,%5B25,1,5%5D,%5B26,1,2%5D,%5B26,1,13%5D,%5B27,1,5%5D,%5B28,1,4%5D,%5B28,1,6%5D,%5B29,1,5%5D,%5B30,1,5%5D,%5B30,1,11%5D,%5B31,1,9%5D,%5B32,1,5%5D,%5B32,1,8%5D,%5B33,1,5%5D,%5B34,1,13%5D,%5B34,1,12%5D,%5B35,1,9%5D,%5B36,1,24%5D,%5B36,1,12%5D,%5B37,1,17%5D,%5B38,1,16%5D,%5B38,1,4%5D,%5B39,1,7%5D,%5B40,1,5%5D,%5B40,1,4%5D,%5B41,1,4%5D,%5B42,1,8%5D,%5B42,1,3%5D,%5B43,1,7%5D,%5B44,1,2%5D,%5B44,1,7%5D,%5B45,1,5%5D,%5B46,1,18%5D%5D%7D&quot;</span><br><br><br><span class="hljs-string">&quot;&#123;&quot;</span>ht<span class="hljs-string">&quot;:222,&quot;</span>wt<span class="hljs-string">&quot;:359,&quot;</span>bw<span class="hljs-string">&quot;:73,&quot;</span>sw<span class="hljs-string">&quot;:359,&quot;</span>mw<span class="hljs-string">&quot;:73,&quot;</span>list<span class="hljs-string">&quot;:[[0,0,0],[1,0,7],[1,0,65],[2,0,2],[3,0,3],[3,0,2],[4,0,1],[5,0,4],[5,0,0],[6,0,0],[7,0,2],[7,0,1],[8,0,2],[9,0,2],[9,0,1],[10,0,1],[11,0,2],[11,0,0],[12,0,1],[13,-1,2],[17,-1,10],[17,-1,1],[22,-1,8],[23,-1,1],[23,-1,1],[24,-1,1],[25,-1,1],[25,-1,0],[26,-1,4],[27,-1,1],[27,-1,1],[28,-1,1],[29,-1,2],[29,-1,0],[30,-1,3],[31,-1,1],[31,-1,1],[32,-1,2],[33,-1,1],[33,-1,0],[34,-1,3],[35,-1,2],[35,-1,2],[36,-1,2],[37,-1,1],[37,-1,4],[38,-1,1],[39,-1,2],[39,-1,2],[40,-1,3],[41,-1,2],[41,-1,5],[42,-1,4],[43,-1,3],[43,-1,7],[44,-1,3],[45,-1,11],[45,-1,9],[46,-1,4],[47,-1,5],[47,-1,5],[48,-1,3],[49,-1,4],[49,-1,5],[50,-1,3],[51,-1,4],[51,-1,2],[52,-1,3],[53,-1,2],[53,-1,5],[54,-1,5],[55,-1,1],[55,-1,3],[56,-1,3],[57,-1,6],[57,-1,5],[58,-1,2],[59,-1,13],[59,-1,30],[59,-1,41],[60,-1,2]]&#125;&quot;</span><br>ht,wt,bw,sw,mw<br>ht是缺口图的高<br>sw = wt  wt是缺口图的宽<br>mw = bw  是滑块的宽<br><br><br>touchList<br>[<br>    &#123;<br>        <span class="hljs-string">&quot;eid&quot;</span>: <span class="hljs-string">&quot;click&quot;</span>,<br>        <span class="hljs-string">&quot;did&quot;</span>: <span class="hljs-string">&quot;&quot;</span>,<br>        <span class="hljs-string">&quot;cn&quot;</span>: <span class="hljs-string">&quot;policy_tip-checkbox&quot;</span>,<br>        <span class="hljs-string">&quot;sx&quot;</span>: <span class="hljs-number">37</span>,<br>        <span class="hljs-string">&quot;sy&quot;</span>: <span class="hljs-number">599</span>,<br>        <span class="hljs-string">&quot;px&quot;</span>: <span class="hljs-number">33</span>,<br>        <span class="hljs-string">&quot;py&quot;</span>: <span class="hljs-number">495</span>,<br>        <span class="hljs-string">&quot;time&quot;</span>: <span class="hljs-number">1695305782314</span><br>    &#125;,<br>    &#123;<br>        <span class="hljs-string">&quot;eid&quot;</span>: <span class="hljs-string">&quot;click&quot;</span>,<br>        <span class="hljs-string">&quot;did&quot;</span>: <span class="hljs-string">&quot;&quot;</span>,<br>        <span class="hljs-string">&quot;cn&quot;</span>: <span class="hljs-string">&quot;input-container&quot;</span>,<br>        <span class="hljs-string">&quot;sx&quot;</span>: <span class="hljs-number">215</span>,<br>        <span class="hljs-string">&quot;sy&quot;</span>: <span class="hljs-number">207</span>,<br>        <span class="hljs-string">&quot;px&quot;</span>: <span class="hljs-number">211</span>,<br>        <span class="hljs-string">&quot;py&quot;</span>: <span class="hljs-number">103</span>,<br>        <span class="hljs-string">&quot;time&quot;</span>: <span class="hljs-number">1695305783282</span><br>    &#125;,<br>    &#123;<br>        <span class="hljs-string">&quot;eid&quot;</span>: <span class="hljs-string">&quot;click&quot;</span>,<br>        <span class="hljs-string">&quot;did&quot;</span>: <span class="hljs-string">&quot;&quot;</span>,<br>        <span class="hljs-string">&quot;cn&quot;</span>: <span class="hljs-string">&quot;acc-input mobile J_ping&quot;</span>,<br>        <span class="hljs-string">&quot;sx&quot;</span>: <span class="hljs-number">212</span>,<br>        <span class="hljs-string">&quot;sy&quot;</span>: <span class="hljs-number">191</span>,<br>        <span class="hljs-string">&quot;px&quot;</span>: <span class="hljs-number">208</span>,<br>        <span class="hljs-string">&quot;py&quot;</span>: <span class="hljs-number">87</span>,<br>        <span class="hljs-string">&quot;time&quot;</span>: <span class="hljs-number">1695305783523</span><br>    &#125;,<br>    &#123;<br>        <span class="hljs-string">&quot;eid&quot;</span>: <span class="hljs-string">&quot;click&quot;</span>,<br>        <span class="hljs-string">&quot;did&quot;</span>: <span class="hljs-string">&quot;authcode&quot;</span>,<br>        <span class="hljs-string">&quot;cn&quot;</span>: <span class="hljs-string">&quot;acc-input J_ping authcode&quot;</span>,<br>        <span class="hljs-string">&quot;sx&quot;</span>: <span class="hljs-number">268</span>,<br>        <span class="hljs-string">&quot;sy&quot;</span>: <span class="hljs-number">256</span>,<br>        <span class="hljs-string">&quot;px&quot;</span>: <span class="hljs-number">264</span>,<br>        <span class="hljs-string">&quot;py&quot;</span>: <span class="hljs-number">152</span>,<br>        <span class="hljs-string">&quot;time&quot;</span>: <span class="hljs-number">1695305793773</span><br>    &#125;,<br>    &#123;<br>        <span class="hljs-string">&quot;eid&quot;</span>: <span class="hljs-string">&quot;click&quot;</span>,<br>        <span class="hljs-string">&quot;did&quot;</span>: <span class="hljs-string">&quot;&quot;</span>,<br>        <span class="hljs-string">&quot;cn&quot;</span>: <span class="hljs-string">&quot;getMsg-btn text-btn J_ping timer&quot;</span>,<br>        <span class="hljs-string">&quot;sx&quot;</span>: <span class="hljs-number">389</span>,<br>        <span class="hljs-string">&quot;sy&quot;</span>: <span class="hljs-number">260</span>,<br>        <span class="hljs-string">&quot;px&quot;</span>: <span class="hljs-number">385</span>,<br>        <span class="hljs-string">&quot;py&quot;</span>: <span class="hljs-number">156</span>,<br>        <span class="hljs-string">&quot;time&quot;</span>: <span class="hljs-number">1695305796825</span><br>    &#125;,<br>    &#123;<br>        <span class="hljs-string">&quot;eid&quot;</span>: <span class="hljs-string">&quot;click&quot;</span>,<br>        <span class="hljs-string">&quot;did&quot;</span>: <span class="hljs-string">&quot;&quot;</span>,<br>        <span class="hljs-string">&quot;cn&quot;</span>: <span class="hljs-string">&quot;&quot;</span>,<br>        <span class="hljs-string">&quot;sx&quot;</span>: <span class="hljs-number">152</span>,<br>        <span class="hljs-string">&quot;sy&quot;</span>: <span class="hljs-number">650</span>,<br>        <span class="hljs-string">&quot;px&quot;</span>: <span class="hljs-number">148</span>,<br>        <span class="hljs-string">&quot;py&quot;</span>: <span class="hljs-number">546</span>,<br>        <span class="hljs-string">&quot;time&quot;</span>: <span class="hljs-number">1695305843035</span><br>    &#125;<br>]<br><br></code></pre></td></tr></table></figure>
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>第三步 jd的m端滑块 check</div>
+      <div>http://example.com/2023/09/4a7b38a4fd49.html</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>John Doe</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2023年9月20日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2023/09/7510dfa8e830.html" title="第一步 jcapsid">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">第一步 jcapsid</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2023/08/7eb11d762305.html" title="mobile的obsidian">
+                        <span class="hidden-mobile">mobile的obsidian</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <div id="waline"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#waline', function() {
+      Fluid.utils.createCssLink('https://lib.baomitu.com/waline/2.14.1/waline.min.css')
+      Fluid.utils.createScript('https://lib.baomitu.com/waline/2.14.1/waline.min.js', function() {
+        var options = Object.assign(
+          {"serverURL":"https://vercel-rkrveurb5-charles-hello.vercel.app/","path":"window.location.pathname","meta":["nick","mail","link"],"requiredMeta":["nick"],"lang":"zh-CN","emoji":["https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo"],"dark":"html[data-user-color-scheme=\"dark\"]","wordLimit":0,"pageSize":10},
+          {
+            el: '#waline',
+            path: window.location.pathname
+          }
+        )
+        Waline.init(options);
+        Fluid.utils.waitElementVisible('#waline .vcontent', () => {
+          var imgSelector = '#waline .vcontent img:not(.vemoji)';
+          Fluid.plugins.imageCaption(imgSelector);
+          Fluid.plugins.fancyBox(imgSelector);
+        })
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> <div> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script src="/js/duration.js"></script> </div> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+  
+<script src="//cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify@1.1/runtime.min.js"></script>
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+<!-- hexo injector body_end start --><script src="/js/backgroundize.js"></script><!-- hexo injector body_end end --></body>
+</html>

@@ -1,0 +1,669 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" >
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657curl &amp;#x27;https:&#x2F;&#x2F;plogin.m.jd.com&#x2F;cgi-bin&#x2F;mm&#x2F;new_login_entrance?lang&#x3D;chs&amp;appid&#x3D;300&amp;ret">
+<meta property="og:type" content="article">
+<meta property="og:title" content="第一步 jcapsid">
+<meta property="og:url" content="http://example.com/2023/09/7510dfa8e830.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657curl &amp;#x27;https:&#x2F;&#x2F;plogin.m.jd.com&#x2F;cgi-bin&#x2F;mm&#x2F;new_login_entrance?lang&#x3D;chs&amp;appid&#x3D;300&amp;ret">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/banner_images/banne_photo78.png">
+<meta property="article:published_time" content="2023-09-21T10:06:38.000Z">
+<meta property="article:modified_time" content="2023-09-27T08:27:52.000Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://example.com/banner_images/banne_photo78.png">
+  
+  
+  
+  <title>第一步 jcapsid - Hexo</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body><!-- hexo injector body_begin start --><div id="web_bg"></div><!-- hexo injector body_begin end -->
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Fluid</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="第一步 jcapsid"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2023-09-21 10:06" pubdate>
+          2023年9月21日 上午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          7.5k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          63 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">第一步 jcapsid</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><code class="hljs python">curl <span class="hljs-string">&#x27;https://plogin.m.jd.com/cgi-bin/mm/new_login_entrance?lang=chs&amp;appid=300&amp;returnurl=https:%2F%2Fwq.jd.com%2Fpassport%2FLoginRedirect%3Fstate%3D3349177940%26returnurl%3Dhttps%253A%252F%252Fhome.m.jd.com%252FmyJd%252Fhome.action&amp;source=wq_passport&amp;risk_jd\[eid\]=&amp;risk_jd\[fp\]=b8ca252e09666b8b4f51be6a51759e49&#x27;</span> \<br>  -H <span class="hljs-string">&#x27;authority: plogin.m.jd.com&#x27;</span> \<br>  -H <span class="hljs-string">&#x27;accept: application/json, text/plain, */*&#x27;</span> \<br>  -H <span class="hljs-string">&#x27;accept-language: zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6&#x27;</span> \<br>  -H <span class="hljs-string">&#x27;cache-control: no-cache&#x27;</span> \<br>  -H <span class="hljs-string">&#x27;content-type: application/x-www-form-urlencoded&#x27;</span> \<br>  -H <span class="hljs-string">&#x27;cookie: shshshfpb=AAl4W4raKEl6iuVm8JfmlUxMQtLXmSxaVKFNjQAAAAAA&#x27;</span> \<br>  -H <span class="hljs-string">&#x27;dnt: 1&#x27;</span> \<br>  -H <span class="hljs-string">&#x27;pragma: no-cache&#x27;</span> \<br>  -H <span class="hljs-string">&#x27;referer: https://plogin.m.jd.com/login/login?appid=300&amp;returnurl=https%3A%2F%2Fwq.jd.com%2Fpassport%2FLoginRedirect%3Fstate%3D3349177940%26returnurl%3Dhttps%253A%252F%252Fhome.m.jd.com%252FmyJd%252Fhome.action&amp;source=wq_passport&#x27;</span> \<br>  -H <span class="hljs-string">&#x27;sec-ch-ua: &quot;Microsoft Edge&quot;;v=&quot;117&quot;, &quot;Not;A=Brand&quot;;v=&quot;8&quot;, &quot;Chromium&quot;;v=&quot;117&quot;&#x27;</span> \<br>  -H <span class="hljs-string">&#x27;sec-ch-ua-mobile: ?0&#x27;</span> \<br>  -H <span class="hljs-string">&#x27;sec-ch-ua-platform: &quot;Windows&quot;&#x27;</span> \<br>  -H <span class="hljs-string">&#x27;sec-fetch-dest: empty&#x27;</span> \<br>  -H <span class="hljs-string">&#x27;sec-fetch-mode: cors&#x27;</span> \<br>  -H <span class="hljs-string">&#x27;sec-fetch-site: same-origin&#x27;</span> \<br>  -H <span class="hljs-string">&#x27;user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36 Edg/117.0.2045.31&#x27;</span> \<br>  --compressed<br><br><br>请求参数（均不变）<br><span class="hljs-number">1.</span> lang: chs<br><span class="hljs-number">2.</span> appid: <span class="hljs-number">300</span><br><span class="hljs-number">3.</span> returnurl:https://wq.jd.com/passport/LoginRedirect?state=<span class="hljs-number">3349177940</span>&amp;returnurl=https%3A%2F%2Fhome.m.jd.com%2FmyJd%2Fhome.action<br><span class="hljs-number">4.</span> source: wq_passport<br><span class="hljs-number">5.</span> risk_jd[eid]:<br><span class="hljs-number">6.</span> risk_jd[fp]:b8ca252e09666b8b4f51be6a51759e49 <br>下面的st是有这个请求（s_token数据）得到的<br>响应值 = &#123;<br>   <span class="hljs-string">&quot;country_code_switch&quot;</span> : true,<br>   <span class="hljs-string">&quot;enable_smslogin&quot;</span> : true,<br>   <span class="hljs-string">&quot;enable_usernamelogin&quot;</span> : true,<br>   <span class="hljs-string">&quot;err_code&quot;</span> : <span class="hljs-number">0</span>,<br>   <span class="hljs-string">&quot;err_msg&quot;</span> : <span class="hljs-string">&quot;&quot;</span>,<br>   <span class="hljs-string">&quot;jcap_domain&quot;</span> : <span class="hljs-string">&quot;jcap.m.jd.com&quot;</span>,<br>   <span class="hljs-string">&quot;kepler&quot;</span> : false,<br>   <span class="hljs-string">&quot;kpkey_switch&quot;</span> : false,<br>   <span class="hljs-string">&quot;logoUrl&quot;</span> : <span class="hljs-string">&quot;&quot;</span>,<br>   <span class="hljs-string">&quot;mobile&quot;</span> : <span class="hljs-string">&quot;&quot;</span>,<br>   <span class="hljs-string">&quot;need_auth&quot;</span> : true,<br>   <span class="hljs-string">&quot;onekeylog_switch&quot;</span> : false,<br>   <span class="hljs-string">&quot;only_login&quot;</span> : true,<br>   <span class="hljs-string">&quot;qblog_switch&quot;</span> : false,<br>   <span class="hljs-string">&quot;rsa_modulus&quot;</span> : <span class="hljs-string">&quot;BA393683B1CD20CE149344349E9C8E1AA9517CC9260AF69E7F467187C7B1AE5C0563A2391673FCCF0F211E1F776FF079C1F580E8FA6AD2DA2BCCD0B4EE49866BAE61BE5A7AF1A3DF18FD2EEF969372DB745007BE87CB8FC484C359B38F9B07066D0E761DF36F691721544A6C714472088B658BDB1B652870036F3BCDA2CE8E09&quot;</span>,<br>   <span class="hljs-string">&quot;s_token&quot;</span> : <span class="hljs-string">&quot;h3z59cv4&quot;</span>,<br>   <span class="hljs-string">&quot;show_applelogin&quot;</span> : false,<br>   <span class="hljs-string">&quot;show_checkbox&quot;</span> : false,<br>   <span class="hljs-string">&quot;show_jdpaylogin&quot;</span> : false,<br>   <span class="hljs-string">&quot;show_otherlogin&quot;</span> : true,<br>   <span class="hljs-string">&quot;show_title&quot;</span> : true,<br>   <span class="hljs-string">&quot;show_wxlogin&quot;</span> : false,<br>   <span class="hljs-string">&quot;tpl&quot;</span> : <span class="hljs-string">&quot;&quot;</span>,<br>   <span class="hljs-string">&quot;unmodified_name&quot;</span> : <span class="hljs-string">&quot;&quot;</span><br>&#125;<br><br><br><br></code></pre></td></tr></table></figure>
+
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><br><span class="hljs-attr">generateUuid</span>: <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) &#123;<br>            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> h = <span class="hljs-string">&quot;xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx&quot;</span>.<span class="hljs-title function_">split</span>(<span class="hljs-string">&quot;&quot;</span>), k = <span class="hljs-number">0</span>, a = h.<span class="hljs-property">length</span>; k &lt; a; k++)<br>                <span class="hljs-keyword">switch</span> (h[k]) &#123;<br>                <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;x&quot;</span>:<br>                    h[k] = t.<span class="hljs-title function_">floor</span>(<span class="hljs-number">16</span> * t.<span class="hljs-title function_">random</span>()).<span class="hljs-title function_">toString</span>(<span class="hljs-number">16</span>);<br>                    <span class="hljs-keyword">break</span>;<br>                <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;y&quot;</span>:<br>                    h[k] = (t.<span class="hljs-title function_">floor</span>(<span class="hljs-number">4</span> * t.<span class="hljs-title function_">random</span>()) + <span class="hljs-number">8</span>).<span class="hljs-title function_">toString</span>(<span class="hljs-number">16</span>)<br>                &#125;<br>	<span class="hljs-keyword">return</span> h.<span class="hljs-title function_">join</span>(<span class="hljs-string">&quot;&quot;</span>)<br>&#125;<br><br><br><span class="hljs-attr">mac</span>: <span class="hljs-keyword">function</span>(<span class="hljs-params">v</span>) &#123;<br>            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> x = -<span class="hljs-number">1</span>, w = <span class="hljs-number">0</span>, A = v.<span class="hljs-property">length</span>; w &lt; A; w++)<br>                x = x &gt;&gt;&gt; <span class="hljs-number">8</span> ^ t[(x ^ v.<span class="hljs-title function_">charCodeAt</span>(w)) &amp; <span class="hljs-number">255</span>];<br>            <span class="hljs-keyword">return</span> (x ^ -<span class="hljs-number">1</span>) &gt;&gt;&gt; <span class="hljs-number">0</span><br>&#125;<br><br><br><span class="hljs-attr">parse</span>: <span class="hljs-keyword">function</span>(<span class="hljs-params">h</span>) &#123;<br>            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> k = h.<span class="hljs-property">length</span>, a = [], b = <span class="hljs-number">0</span>; b &lt; k; b++)<br>                a[b &gt;&gt;&gt; <span class="hljs-number">2</span>] |= (h.<span class="hljs-title function_">charCodeAt</span>(b) &amp; <span class="hljs-number">255</span>) &lt;&lt; <span class="hljs-number">24</span> - b % <span class="hljs-number">4</span> * <span class="hljs-number">8</span>;<br>            <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> A.<span class="hljs-title function_">init</span>(a,k)<br>&#125;<br><br>jd_shadow__ = <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) &#123;<br>	<span class="hljs-keyword">var</span> t = <span class="hljs-title class_">JDDSecCryptoJS</span><br>	  , u = [];<br>	u.<span class="hljs-title function_">push</span>(<span class="hljs-string">&quot;plogin.m.jd.com/login/login&quot;</span>);<br>	<span class="hljs-keyword">var</span> v = t.<span class="hljs-property">lib</span>.<span class="hljs-property">UUID</span>.<span class="hljs-title function_">generateUuid</span>(); <span class="hljs-comment">//a2accc18-4cec-4b8b-a5e3-e57f937095341695298313786</span><br>	u.<span class="hljs-title function_">push</span>(v);<br>	<span class="hljs-keyword">var</span> x = (<span class="hljs-keyword">new</span> <span class="hljs-title class_">Date</span>).<span class="hljs-title function_">getTime</span>();  <span class="hljs-comment">//1695298281088</span><br>	u.<span class="hljs-title function_">push</span>(x);<br>	<span class="hljs-comment">//u.join(&quot;&quot;) = &quot;plogin.m.jd.com/login/logina2accc18-4cec-4b8b-a5e3-e57f937095341695298313786&quot;</span><br><br>	<span class="hljs-keyword">var</span> w = t.<span class="hljs-title class_">SHA1</span>(u.<span class="hljs-title function_">join</span>(<span class="hljs-string">&quot;&quot;</span>)).<span class="hljs-title function_">toString</span>().<span class="hljs-title function_">toUpperCase</span>(); <span class="hljs-comment">//2D28BD01DBB26C4FE65CB4909239386B345A93CC</span><br>	u = [];<br>	u.<span class="hljs-title function_">push</span>(<span class="hljs-string">&quot;JD3&quot;</span>); <br>	u.<span class="hljs-title function_">push</span>(w);<br>	<span class="hljs-comment">//u.join(&quot;&quot;) = &quot;JD32D28BD01DBB26C4FE65CB4909239386B345A93CC&quot;</span><br>	<span class="hljs-keyword">var</span> A = (<span class="hljs-keyword">new</span> <span class="hljs-variable constant_">JDDMAC</span>).<span class="hljs-title function_">mac</span>(u.<span class="hljs-title function_">join</span>(<span class="hljs-string">&quot;&quot;</span>)); <span class="hljs-comment">//187888916</span><br>	u.<span class="hljs-title function_">push</span>(A);<br>	<span class="hljs-keyword">var</span> y = t.<span class="hljs-property">enc</span>.<span class="hljs-property">Hex</span>.<span class="hljs-title function_">parse</span>(<span class="hljs-string">&quot;30313233343536373839616263646566&quot;</span>)<br>	<span class="hljs-comment">//y = [</span><br>    <span class="hljs-number">808530483</span>,<br>    <span class="hljs-number">875902519</span>,<br>    <span class="hljs-number">943284578</span>,<br>    <span class="hljs-number">1667523942</span><br>]<br>	  , n = t.<span class="hljs-property">enc</span>.<span class="hljs-property">Hex</span>.<span class="hljs-title function_">parse</span>(<span class="hljs-string">&quot;4c5751554935255042304e6458323365&quot;</span>)<br>	<span class="hljs-comment">//n = [</span><br>    <span class="hljs-number">1280790869</span>,<br>    <span class="hljs-number">1228219728</span>,<br>    <span class="hljs-number">1110462052</span>,<br>    <span class="hljs-number">1479684965</span><br>]<br>	  , f = u.<span class="hljs-title function_">join</span>(<span class="hljs-string">&quot;&quot;</span>); <span class="hljs-comment">//&quot;JD32D28BD01DBB26C4FE65CB4909239386B345A93CC187888916&quot;</span><br>	<span class="hljs-keyword">return</span> t.<span class="hljs-property">AES</span>.<span class="hljs-title function_">encrypt</span>(t.<span class="hljs-property">enc</span>.<span class="hljs-property">Utf8</span>.<span class="hljs-title function_">parse</span>(f), n, &#123;<br>		<span class="hljs-attr">mode</span>: t.<span class="hljs-property">mode</span>.<span class="hljs-property">CBC</span>,<br>		<span class="hljs-attr">padding</span>: t.<span class="hljs-property">pad</span>.<span class="hljs-property">Pkcs7</span>,<br>		<span class="hljs-attr">iv</span>: y<br>	&#125;).<span class="hljs-property">ciphertext</span>.<span class="hljs-title function_">toString</span>(t.<span class="hljs-property">enc</span>.<span class="hljs-property">Base32</span>)<br>	<span class="hljs-comment">//t.enc.Base32 = &#123;</span><br>    <span class="hljs-comment">//&quot;_map&quot;: &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ234567&quot;</span><br>     <span class="hljs-comment">//&#125;</span><br>	<br></code></pre></td></tr></table></figure>
+
+
+<figure class="highlight livescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs livescript">token参数生成是请求<br>curl <span class="hljs-string">&#x27;https://payrisk.jd.com/m.html&#x27;</span> <span class="hljs-string">\</span><br>  -H <span class="hljs-string">&#x27;Accept: */*&#x27;</span> <span class="hljs-string">\</span><br>  -H <span class="hljs-string">&#x27;Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6&#x27;</span> <span class="hljs-string">\</span><br>  -H <span class="hljs-string">&#x27;Cache-Control: no-cache&#x27;</span> <span class="hljs-string">\</span><br>  -H <span class="hljs-string">&#x27;Connection: keep-alive&#x27;</span> <span class="hljs-string">\</span><br>  -H <span class="hljs-string">&#x27;Cookie: mba_muid=1695299601792779320572; __jd_ref_cls=MLoginRegister_SMSReceiveCode&#x27;</span> <span class="hljs-string">\</span><br>  -H <span class="hljs-string">&#x27;DNT: 1&#x27;</span> <span class="hljs-string">\</span><br>  -H <span class="hljs-string">&#x27;Pragma: no-cache&#x27;</span> <span class="hljs-string">\</span><br>  -H <span class="hljs-string">&#x27;Referer: https://plogin.m.jd.com/&#x27;</span> <span class="hljs-string">\</span><br>  -H <span class="hljs-string">&#x27;Sec-Fetch-Dest: script&#x27;</span> <span class="hljs-string">\</span><br>  -H <span class="hljs-string">&#x27;Sec-Fetch-Mode: no-cors&#x27;</span> <span class="hljs-string">\</span><br>  -H <span class="hljs-string">&#x27;Sec-Fetch-Site: same-site&#x27;</span> <span class="hljs-string">\</span><br>  -H <span class="hljs-string">&#x27;User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36 Edg/117.0.2045.31&#x27;</span> <span class="hljs-string">\</span><br>  -H <span class="hljs-string">&#x27;sec-ch-ua: &quot;Microsoft Edge&quot;;v=&quot;117&quot;, &quot;Not;A=Brand&quot;;v=&quot;8&quot;, &quot;Chromium&quot;;v=&quot;117&quot;&#x27;</span> <span class="hljs-string">\</span><br>  -H <span class="hljs-string">&#x27;sec-ch-ua-mobile: ?0&#x27;</span> <span class="hljs-string">\</span><br>  -H <span class="hljs-string">&#x27;sec-ch-ua-platform: &quot;Windows&quot;&#x27;</span> <span class="hljs-string">\</span><br>  --compressed<br><br>响应数据为：<span class="hljs-keyword">var</span> jd_risk_token_id = <span class="hljs-string">&#x27;PP3UPD2FJQD77FCZGVGHJMUHMTHR77WWPY7GKN4AEA3472SKA4HFIE75PFQ53DLUGRYRSZP65ZHKQ&#x27;</span>;<br><br></code></pre></td></tr></table></figure>
+
+
+
+
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">jstub</span>参数生成位置 ：<span class="hljs-number">103</span>个字符<br></code></pre></td></tr></table></figure>
+<p><img src="/../images/Pasted%20image%2020230921173349.png" srcset="/img/loading.gif" lazyload></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs python"><br>data = &#123; <span class="hljs-string">&#x27;st&#x27;</span>: <span class="hljs-string">&#x27;7wq6lt1n&#x27;</span>, <span class="hljs-string">&#x27;mod&#x27;</span>: <span class="hljs-string">&#x27;smslogin&#x27;</span>, <span class="hljs-string">&#x27;username_phone&#x27;</span>: <span class="hljs-string">&#x27;13411111111&#x27;</span>, <span class="hljs-string">&#x27;risk_jd[eid]&#x27;</span>: <span class="hljs-string">&#x27;&#x27;</span>, <span class="hljs-string">&#x27;risk_jd[fp]&#x27;</span>: <span class="hljs-string">&#x27;b8ca252e09666b8b4f51be6a51759e49&#x27;</span>, <span class="hljs-string">&#x27;risk_jd[sdkToken]&#x27;</span>: <span class="hljs-string">&#x27;&#x27;</span>, <span class="hljs-string">&#x27;risk_jd[token]&#x27;</span>: <span class="hljs-string">&#x27;V6X43Y32UMGDJNWARM6TTAB22CLIWQGHNXJ5SB4YUFN3AFF3VBAEYBY4TYAED3IAO2ZFAJXV7SGE2&#x27;</span>, <span class="hljs-string">&#x27;risk_jd[jstub]&#x27;</span>: <span class="hljs-string">&#x27;AOZ7XUKWP64WZJBHOXV3N3JE2H27L3KDVKONU6YXZBCGCB6TSAFWDT6JNSM7UNX3A5PPR44VYRN6RMYC3LSUNCE2IQZ4V5CQJRAJ5XI&#x27;</span>, <span class="hljs-string">&#x27;risk_jd[fpstep]&#x27;</span>: <span class="hljs-string">&#x27;nb1695261896170&#x27;</span>, &#125;<br><br><br><br><br><br><br><br><br>mod = 固定 解决<br>username_phone = 手机号 解决<br>st = 会变 （时间戳） s_token 解决<br>risk_jd[eid] = 会变 可为空 解决<br>risk_jd[token]  = 会变  解决 <br>risk_jd[jstub]  = 会变  解决<br>risk_jd[fpstep]  = 会变  nb+时间戳 解决<br>risk_jd[fp] = 上面的fp参数 解决<br><br></code></pre></td></tr></table></figure>
+
+
+<h4 id="返回-jcap-sid-x3D-x3D-si-给第二步"><a href="#返回-jcap-sid-x3D-x3D-si-给第二步" class="headerlink" title="返回 jcap_sid &#x3D;&#x3D; si 给第二步"></a>返回 jcap_sid &#x3D;&#x3D; si 给第二步</h4><p>WO-_xgABAAAE90GXWUkAMI2cq6P4aWCX6wN6BTUJghrMEBjEf5AfE3ZgyfDPWTDXKUcZ2cZFmef5zGiz5wq9YAAAAAA</p>
+<p>请求参数</p>
+<figure class="highlight nestedtext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><code class="hljs nestedtext"><span class="hljs-attribute">1. st</span><span class="hljs-punctuation">:</span><br><span class="hljs-punctuation">    </span><br>    <span class="hljs-attribute">ay1kk1bz</span><br><span class="hljs-attribute">    </span><br><span class="hljs-attribute">2. mod</span><span class="hljs-punctuation">:</span><br><span class="hljs-punctuation">    </span><br>    <span class="hljs-attribute">smslogin</span><br><span class="hljs-attribute">    </span><br><span class="hljs-attribute">3. username_phone</span><span class="hljs-punctuation">:</span><br><span class="hljs-punctuation">    </span><br>    <span class="hljs-attribute">15695302611</span><br><span class="hljs-attribute">    </span><br><span class="hljs-attribute">4. risk_jd[eid]</span><span class="hljs-punctuation">:</span><br><span class="hljs-punctuation">    </span><br><span class="hljs-attribute">5. risk_jd[fp]</span><span class="hljs-punctuation">:</span><br><span class="hljs-punctuation">    </span><br>    <span class="hljs-attribute">09a3f0e2fda6f1fd5809c369471fbd51</span><br><span class="hljs-attribute">    </span><br><span class="hljs-attribute">6. risk_jd[sdkToken]</span><span class="hljs-punctuation">:</span><br><span class="hljs-punctuation">    </span><br><span class="hljs-attribute">7. risk_jd[token]</span><span class="hljs-punctuation">:</span><br><span class="hljs-punctuation">    </span><br>    <span class="hljs-attribute">YLNNKH6TN3KRN5CJCSJILYM6J24R2XC72DLJ2Q6HUAY4R543WKZR2K4L45DXCDRMD7KVRZFT6AHMM</span><br><span class="hljs-attribute">    </span><br><span class="hljs-attribute">8. risk_jd[jstub]</span><span class="hljs-punctuation">:</span><br><span class="hljs-punctuation">    </span><br>    <span class="hljs-attribute">6VF6LZIJ2JN7P32DJJAYJISLKVR22KLXOVKDUNO7BKMZPGJR7PR7TAFOUCBKF3SOP2PIPEDXGGF4EWTZQTBJ32ZM6UZN4QAWJSBMHAI</span><br><span class="hljs-attribute">    </span><br><span class="hljs-attribute">9. risk_jd[fpstep]</span><span class="hljs-punctuation">:</span><br><span class="hljs-punctuation">    </span><br>    nb1695304763797<br><br></code></pre></td></tr></table></figure>
+
+
+<p>响应</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs json"><span class="hljs-punctuation">&#123;</span><span class="hljs-attr">&quot;err_code&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-number">0</span><span class="hljs-punctuation">,</span><span class="hljs-attr">&quot;err_msg&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-string">&quot;&quot;</span><span class="hljs-punctuation">,</span><span class="hljs-attr">&quot;jcap_sid&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-string">&quot;YeAjewABAAAFKjmjjLsAMPM4ujHdGEOja0XkbxGeNCusy2LK32yJRvNH5LJ9F2KefYpB2BkdJPv-vldAlDdW4gAAAAA&quot;</span><span class="hljs-punctuation">&#125;</span><br><br></code></pre></td></tr></table></figure>
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>第一步 jcapsid</div>
+      <div>http://example.com/2023/09/7510dfa8e830.html</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>John Doe</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2023年9月21日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2023/09/6dd30c0bdb90.html" title="第二步：jd的fp请求">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">第二步：jd的fp请求</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2023/09/4a7b38a4fd49.html" title="第三步 jd的m端滑块 check">
+                        <span class="hidden-mobile">第三步 jd的m端滑块 check</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <div id="waline"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#waline', function() {
+      Fluid.utils.createCssLink('https://lib.baomitu.com/waline/2.14.1/waline.min.css')
+      Fluid.utils.createScript('https://lib.baomitu.com/waline/2.14.1/waline.min.js', function() {
+        var options = Object.assign(
+          {"serverURL":"https://vercel-rkrveurb5-charles-hello.vercel.app/","path":"window.location.pathname","meta":["nick","mail","link"],"requiredMeta":["nick"],"lang":"zh-CN","emoji":["https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo"],"dark":"html[data-user-color-scheme=\"dark\"]","wordLimit":0,"pageSize":10},
+          {
+            el: '#waline',
+            path: window.location.pathname
+          }
+        )
+        Waline.init(options);
+        Fluid.utils.waitElementVisible('#waline .vcontent', () => {
+          var imgSelector = '#waline .vcontent img:not(.vemoji)';
+          Fluid.plugins.imageCaption(imgSelector);
+          Fluid.plugins.fancyBox(imgSelector);
+        })
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> <div> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script src="/js/duration.js"></script> </div> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+  
+<script src="//cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify@1.1/runtime.min.js"></script>
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+<!-- hexo injector body_end start --><script src="/js/backgroundize.js"></script><!-- hexo injector body_end end --></body>
+</html>

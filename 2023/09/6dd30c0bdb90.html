@@ -1,0 +1,655 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" >
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556function q(t, e) &amp;#123;	for (var n &#x3D; t.toString().length; n &lt; e; )		t &#x3D; &quot;0&quot; + t,		n+">
+<meta property="og:type" content="article">
+<meta property="og:title" content="第二步：jd的fp请求">
+<meta property="og:url" content="http://example.com/2023/09/6dd30c0bdb90.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556function q(t, e) &amp;#123;	for (var n &#x3D; t.toString().length; n &lt; e; )		t &#x3D; &quot;0&quot; + t,		n+">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/banner_images/banne_photo83.png">
+<meta property="article:published_time" content="2023-09-21T21:09:01.000Z">
+<meta property="article:modified_time" content="2023-09-27T08:27:52.000Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://example.com/banner_images/banne_photo83.png">
+  
+  
+  
+  <title>第二步：jd的fp请求 - Hexo</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body><!-- hexo injector body_begin start --><div id="web_bg"></div><!-- hexo injector body_begin end -->
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Fluid</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="第二步：jd的fp请求"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2023-09-21 21:09" pubdate>
+          2023年9月21日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          5k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          42 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">第二步：jd的fp请求</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><br><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">q</span>(<span class="hljs-params">t, e</span>) &#123;<br>	<span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> n = t.<span class="hljs-title function_">toString</span>().<span class="hljs-property">length</span>; n &lt; e; )<br>		t = <span class="hljs-string">&quot;0&quot;</span> + t,<br>		n++;<br>	<span class="hljs-keyword">return</span> t<br>&#125;<br><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">k</span>(<span class="hljs-params">t</span>) &#123;<br>	<span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> e = [<span class="hljs-string">&quot;0&quot;</span>, <span class="hljs-string">&quot;1&quot;</span>, <span class="hljs-string">&quot;2&quot;</span>, <span class="hljs-string">&quot;3&quot;</span>, <span class="hljs-string">&quot;4&quot;</span>, <span class="hljs-string">&quot;5&quot;</span>, <span class="hljs-string">&quot;6&quot;</span>, <span class="hljs-string">&quot;7&quot;</span>, <span class="hljs-string">&quot;8&quot;</span>, <span class="hljs-string">&quot;9&quot;</span>, <span class="hljs-string">&quot;a&quot;</span>, <span class="hljs-string">&quot;b&quot;</span>, <span class="hljs-string">&quot;c&quot;</span>, <span class="hljs-string">&quot;d&quot;</span>, <span class="hljs-string">&quot;e&quot;</span>, <span class="hljs-string">&quot;f&quot;</span>, <span class="hljs-string">&quot;g&quot;</span>, <span class="hljs-string">&quot;h&quot;</span>, <span class="hljs-string">&quot;i&quot;</span>, <span class="hljs-string">&quot;j&quot;</span>, <span class="hljs-string">&quot;k&quot;</span>, <span class="hljs-string">&quot;l&quot;</span>, <span class="hljs-string">&quot;m&quot;</span>, <span class="hljs-string">&quot;n&quot;</span>, <span class="hljs-string">&quot;o&quot;</span>, <span class="hljs-string">&quot;p&quot;</span>, <span class="hljs-string">&quot;q&quot;</span>, <span class="hljs-string">&quot;r&quot;</span>, <span class="hljs-string">&quot;s&quot;</span>, <span class="hljs-string">&quot;t&quot;</span>, <span class="hljs-string">&quot;u&quot;</span>, <span class="hljs-string">&quot;v&quot;</span>, <span class="hljs-string">&quot;w&quot;</span>, <span class="hljs-string">&quot;x&quot;</span>, <span class="hljs-string">&quot;y&quot;</span>, <span class="hljs-string">&quot;z&quot;</span>], n = <span class="hljs-string">&quot;&quot;</span>, r = <span class="hljs-number">0</span>; r &lt; t; r++) &#123;<br>		n += e[<span class="hljs-title class_">Math</span>.<span class="hljs-title function_">floor</span>(<span class="hljs-number">35</span> * <span class="hljs-title class_">Math</span>.<span class="hljs-title function_">random</span>())]<br>	&#125;<br>	<span class="hljs-keyword">return</span> n<br>&#125;<br><br>&#123;<br>h = d.<span class="hljs-property">dispatch</span>,<br>g = d.<span class="hljs-property">commit</span>,<br>v = p.<span class="hljs-property">fp_req</span>,<br>m = p.<span class="hljs-property">platformType</span>,<br>y = p.<span class="hljs-property">setFp</span>,<br>b = p.<span class="hljs-property">captchaType</span>,<br>_ = p.<span class="hljs-property">langMap</span>,<br>t.<span class="hljs-property">prev</span> = <span class="hljs-number">2</span>,<br>t.<span class="hljs-property">next</span> = <span class="hljs-number">5</span>,<br>e = p,<br>l = <span class="hljs-keyword">void</span> <span class="hljs-number">0</span>,<br>n = <span class="hljs-title class_">Date</span>.<span class="hljs-title function_">parse</span>(<span class="hljs-keyword">new</span> <span class="hljs-title class_">Date</span> + <span class="hljs-string">&quot;&quot;</span>),  <span class="hljs-comment">//1695302616000</span><br>r = n % <span class="hljs-number">19</span>,   <span class="hljs-comment">//10</span><br>o = e.<span class="hljs-property">sessionId</span>,  <span class="hljs-comment">//jasp请求的响应</span><br>i = e.<span class="hljs-property">host</span>,   <span class="hljs-string">&quot;//jcap.m.jd.com&quot;</span><br>a = e.<span class="hljs-property">tdat_code</span>, <span class="hljs-number">99992</span><br>s = e.<span class="hljs-property">devcInfo</span>, <span class="hljs-string">&quot;&#123;&quot;</span>account<span class="hljs-string">&quot;:&quot;</span><span class="hljs-number">15952982822</span><span class="hljs-string">&quot;,&quot;</span>ccode<span class="hljs-string">&quot;:&quot;</span><span class="hljs-number">86</span><span class="hljs-string">&quot;,&quot;</span>capfp<span class="hljs-string">&quot;:&#123;&#125;,&quot;</span>cvs<span class="hljs-string">&quot;:&quot;</span>a04d95f1d97489b23cce20bebd6d6d6b<span class="hljs-string">&quot;,&quot;</span>wgl<span class="hljs-string">&quot;:&quot;</span>0ef36cfe7a17521389b08af14c0554d0<span class="hljs-string">&quot;,&quot;</span>pr<span class="hljs-string">&quot;:&quot;</span><span class="hljs-number">1.5</span><span class="hljs-string">&quot;,&quot;</span>cd<span class="hljs-string">&quot;:&quot;</span><span class="hljs-number">24</span><span class="hljs-string">&quot;,&quot;</span>fv<span class="hljs-string">&quot;:&quot;</span><span class="hljs-string">&quot;,&quot;</span>fts<span class="hljs-string">&quot;:&quot;</span><span class="hljs-title class_">Arial</span>,<span class="hljs-title class_">Calibri</span>,<span class="hljs-title class_">Cambria</span>,<span class="hljs-title class_">Consolas</span>,<span class="hljs-title class_">Courier</span>,<span class="hljs-title class_">CourierNew</span>,<span class="hljs-title class_">Georgia</span>,<span class="hljs-title class_">Helvetica</span>,<span class="hljs-title class_">Impact</span>,<span class="hljs-title class_">LucidaConsole</span>,<span class="hljs-title class_">LucidaSansUnicode</span>,<span class="hljs-title class_">MSGothic</span>,<span class="hljs-title class_">MSPGothic</span>,<span class="hljs-title class_">PalatinoLinotype</span>,<span class="hljs-title class_">SegoePrint</span>,<span class="hljs-title class_">SegoeScript</span>,<span class="hljs-title class_">SegoeUI</span>,<span class="hljs-title class_">Tahoma</span>,<span class="hljs-title class_">Times</span>,<span class="hljs-title class_">TimesNewRoman</span>,<span class="hljs-title class_">TrebuchetMS</span>,<span class="hljs-title class_">Verdana</span>,<span class="hljs-title class_">Wingdings</span>,<span class="hljs-title class_">Symbol</span>,<span class="hljs-title class_">Candara</span>,<span class="hljs-title class_">Constantia</span>,<span class="hljs-title class_">Corbel</span>,<span class="hljs-title class_">Ebrima</span>,<span class="hljs-title class_">FangSong</span>,<span class="hljs-title class_">Gabriola</span>,<span class="hljs-title class_">MicrosoftYaHei</span>,<span class="hljs-title class_">MicrosoftYiBaiti</span>,<span class="hljs-title class_">MingLiUExtB</span>,<span class="hljs-title class_">PMingLiUExtB</span>,<span class="hljs-title class_">SimHei</span>,<span class="hljs-title class_">SimSun</span>,<span class="hljs-title class_">SimSunExtB</span><span class="hljs-string">&quot;,&quot;</span>scr<span class="hljs-string">&quot;:&quot;</span>1707x960,1707x912<span class="hljs-string">&quot;,&quot;</span>cpu<span class="hljs-string">&quot;:&quot;</span><span class="hljs-number">8</span><span class="hljs-string">&quot;,&quot;</span>pt<span class="hljs-string">&quot;:&quot;</span><span class="hljs-title class_">Win32</span><span class="hljs-string">&quot;,&quot;</span>tzo<span class="hljs-string">&quot;:&quot;</span><span class="hljs-title class_">Asia</span>/<span class="hljs-title class_">Shanghai</span><span class="hljs-string">&quot;,&quot;</span>lan<span class="hljs-string">&quot;:&quot;</span>zh-<span class="hljs-variable constant_">CN</span><span class="hljs-string">&quot;,&quot;</span>wvr<span class="hljs-string">&quot;:&quot;</span><span class="hljs-title class_">Google</span> <span class="hljs-title class_">Inc</span>. (<span class="hljs-variable constant_">NVIDIA</span>)~<span class="hljs-variable constant_">ANGLE</span> (<span class="hljs-variable constant_">NVIDIA</span>, <span class="hljs-variable constant_">NVIDIA</span> <span class="hljs-title class_">GeForce</span> <span class="hljs-variable constant_">RTX</span> <span class="hljs-number">2060</span> <span class="hljs-title class_">Direct3D11</span> vs_5_0 ps_5_0, <span class="hljs-variable constant_">D3D11</span>)<span class="hljs-string">&quot;,&quot;</span>wdr<span class="hljs-string">&quot;:false,&quot;</span>mem<span class="hljs-string">&quot;:8,&quot;</span>sdv<span class="hljs-string">&quot;:&quot;</span><span class="hljs-number">2.0</span><span class="hljs-string">&quot;,&quot;</span>lns<span class="hljs-string">&quot;:&quot;</span>zh-<span class="hljs-variable constant_">CN</span>,en,en-<span class="hljs-variable constant_">GB</span>,en-<span class="hljs-variable constant_">US</span><span class="hljs-string">&quot;,&quot;</span>tsp<span class="hljs-string">&quot;:&quot;</span><span class="hljs-number">0</span><span class="hljs-string">&quot;&#125;&quot;</span>  <span class="hljs-comment">//account和capfp有时候为空</span><br>c = e.<span class="hljs-property">language</span>, <span class="hljs-number">1</span><br>u = e.<span class="hljs-property">urlMap</span>, &#123;<br>    <span class="hljs-string">&quot;report&quot;</span>: <span class="hljs-string">&quot;https://jcapmonitor.m.jd.com/web_jcap_report&quot;</span>,<br>    <span class="hljs-string">&quot;img&quot;</span>: <span class="hljs-string">&quot;https://h5.360buyimg.com/jcap/pc/img/&quot;</span>,<br>    <span class="hljs-string">&quot;iframe&quot;</span>: <span class="hljs-string">&quot;https://h5.360buyimg.com/jcap/html/captchaStorage.html&quot;</span>,<br>    <span class="hljs-string">&quot;js&quot;</span>: <span class="hljs-string">&quot;https://h5.360buyimg.com/jcap/js/&quot;</span>,<br>    <span class="hljs-string">&quot;fp&quot;</span>: <span class="hljs-string">&quot;/cgi-bin/api/fp&quot;</span>,<br>    <span class="hljs-string">&quot;refresh&quot;</span>: <span class="hljs-string">&quot;/cgi-bin/api/refresh&quot;</span>,<br>    <span class="hljs-string">&quot;check&quot;</span>: <span class="hljs-string">&quot;/cgi-bin/api/check&quot;</span>,<br>    <span class="hljs-string">&quot;v&quot;</span>: <span class="hljs-number">20180110</span><br>&#125; <br>f = e.<span class="hljs-property">tdat_ctx</span>,  <span class="hljs-string">&quot;23130303037303236454145424647333930364347354831453137323142373636383333363233303033333234454636454541433246344546333730344346493333373831483530334233303035313030303&quot;</span>  （固定）<br>(l = &#123;<br>	<span class="hljs-attr">si</span>: o,<br>	<span class="hljs-attr">ct</span>: <span class="hljs-string">&quot;&quot;</span>,<br>	<span class="hljs-attr">version</span>: <span class="hljs-number">2</span>,<br>	<span class="hljs-attr">lang</span>: c,<br>	<span class="hljs-attr">client</span>: e.<span class="hljs-property">platformOS</span> <span class="hljs-string">&quot;m&quot;</span><br>&#125;).<span class="hljs-property">ct</span> = <span class="hljs-title function_">H</span>(<span class="hljs-title function_">K</span>(r) + <span class="hljs-title function_">q</span>(l.<span class="hljs-property">si</span>.<span class="hljs-property">length</span>, <span class="hljs-number">4</span>) + l.<span class="hljs-property">si</span> + s + n, a, f),<br>T.<span class="hljs-property">a</span>.<span class="hljs-property">interfaceId</span> = <span class="hljs-number">268435458</span>,<br>T.<span class="hljs-property">a</span>.<span class="hljs-property">interfaceName</span> = <span class="hljs-string">&quot;fp&quot;</span>,<br><br></code></pre></td></tr></table></figure>
+
+
+
+<h4 id="生成st参数给第三步"><a href="#生成st参数给第三步" class="headerlink" title="生成st参数给第三步"></a>生成st参数给第三步</h4><p>请求参数</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs swift"><span class="hljs-number">1</span>. si:<br>    <br>    <span class="hljs-type">WO</span><span class="hljs-operator">-</span>_xgABAAAE90GXWUkAMI2cq6P4aWCX6wN6BTUJghrMEBjEf5AfE3ZgyfDPWTDXKUcZ2cZFmef5zGiz5wq9YAAAAAA<br>    <br><span class="hljs-number">2</span>. ct:<br>    <br>    &#123;<span class="hljs-string">&quot;data&quot;</span>:<span class="hljs-string">&quot;g76DHnIgKP_LFvPDWo4yuXC_gOhuhQ7Sz0Ctmm-UpSwXU2uZPwHtiyTp7CyRPB9QYn2f9R64bo8E<span class="hljs-subst">\n</span>5TWlPry-KH3CDxamopGRSBu39N8IucckzCROMLzKrJPoIoEkaqZGS3DSZCKqHxaJlpM5XZmykYnb<span class="hljs-subst">\n</span>aZ9aRw_mDsx-ej5T8LR4RI8qcK7s9HGcc_FCnJg5RpGgqSl15w0Fm96CC0E3doFBBQPQwTddR9MA<span class="hljs-subst">\n</span>NyMC3bScVyMS0_XekIDPj6BagTeWKeuFArOfNiIxTMnPXPTCbZMmIaD58akLVfB4T-zaeJioihd5<span class="hljs-subst">\n</span>TZjaaXTC0zcV32iexNAqFAZ9z0znyh1yrivqXdALzdjl7Qpzngcs2r9nggtxqlWezvyubMC0mwxD<span class="hljs-subst">\n</span>olRJF2GKDzvyKkfYLhv1694cuzC8JaYGg37DJnMjZ5sn-i6BpI6Rb7IlRF-5QxjItkdTnM4Q0JYs<span class="hljs-subst">\n</span>Q3wUV3Y5A-xfuldUFNAcoyNuXyIg0r6fl1UdBS_KmbVQ_PvdKlcbHLb77d4beJ4TeNiisvsZh8Fm<span class="hljs-subst">\n</span>T-UwZfFpETxhhdH4_oTbgblfmfH4gEjXxDIAF10CZvv5DtZb1JrgUTM_kDR51tgHzyRSJnPU4Iut<span class="hljs-subst">\n</span>bdjftWTBwh4CfD5NmNACpSPSscUk71lPiTDWHiIKofJ_JY2Em8RCRBi23ECy1pndQkgSL2Nj2jKY<span class="hljs-subst">\n</span>SkbywAor1KafsoIydvs0uAOYC3VQ9n-aaZMPLYacx3sY3t9ggXutg_S3HHNj6Ye0kUcn--p0Zg8x<span class="hljs-subst">\n</span>D3NtlrYITf-DLlaxMQAzYKDXnwayPy3h3I6huF6zz65xkDQ_7xMP4bGlrPMbWjveE8ll4fuxKFMo<span class="hljs-subst">\n</span>j4iCtHURELr95j6I4_4VTYTZKIGdYfbKsdAPFyGNj06UCUXTnu18I3jCR3kwzF4Gm-TQjI_ner_q<span class="hljs-subst">\n</span>uRjuqH1cxuuUdjp0Vjwuv3XE0rzTMH94zuiPannhtOEKapPBbJA3-TNx6-R68suP3mg6EKhypcd5<span class="hljs-subst">\n</span>GmjKv6hp6WD_TxKVA4OuQJcYTthVRv2q9jv_nLmMs0o2tyDHU0yf7dJMf6Z_RBFaBZs67XdFm4dQ<span class="hljs-subst">\n</span>yyhlYrcgYwvbeC2QCQyuNfhgpxjWc2OO1nAl_1TLPa-gHSYJMQ5nAdDs6HulwGHg_HcCZaSUePUl<span class="hljs-subst">\n</span>bF18mAvXxXbU7AIcxEMGixzYL4AVbWruck8u75WXhQsGmi7fm_D0M9Yz5xd4cCZDkutEGvRXU6un<span class="hljs-subst">\n</span>tRrjWp6oaQGVkTtftlLz5A==&quot;</span>,<span class="hljs-string">&quot;version&quot;</span>:<span class="hljs-number">2</span>&#125;<br>    <br><span class="hljs-number">3</span>. version:<br>    <br>    <span class="hljs-number">2</span><br>    <br><span class="hljs-number">4</span>. lang:<br>    <br>    <span class="hljs-number">1</span><br>    <br><span class="hljs-number">5</span>. client:<br>    <br>    m<br><br></code></pre></td></tr></table></figure>
+
+<p>响应 </p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs json"><span class="hljs-punctuation">&#123;</span><span class="hljs-attr">&quot;st&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-string">&quot;AxuG0iKCCEIEgaaY&quot;</span><span class="hljs-punctuation">,</span><span class="hljs-attr">&quot;code&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-number">0</span><span class="hljs-punctuation">,</span><span class="hljs-attr">&quot;msg&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-string">&quot;&quot;</span><span class="hljs-punctuation">,</span><span class="hljs-attr">&quot;fp&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-string">&quot;n8wUAxWalvZwEAiWGNO7mIqE1y3cK7ybfAYaJWxyzCjxHDJ2KTuyZmGByqbjOUsCnGO6kDxD7khND3F0W4Rktw==&quot;</span><span class="hljs-punctuation">,</span><span class="hljs-attr">&quot;tp&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-number">9</span><span class="hljs-punctuation">,</span><span class="hljs-attr">&quot;img&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-string">&quot;&quot;</span><span class="hljs-punctuation">&#125;</span><br></code></pre></td></tr></table></figure>
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>第二步：jd的fp请求</div>
+      <div>http://example.com/2023/09/6dd30c0bdb90.html</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>John Doe</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2023年9月21日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2023/09/a74b19222872.html" title="jd扫码登录逻辑">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">jd扫码登录逻辑</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2023/09/7510dfa8e830.html" title="第一步 jcapsid">
+                        <span class="hidden-mobile">第一步 jcapsid</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <div id="waline"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#waline', function() {
+      Fluid.utils.createCssLink('https://lib.baomitu.com/waline/2.14.1/waline.min.css')
+      Fluid.utils.createScript('https://lib.baomitu.com/waline/2.14.1/waline.min.js', function() {
+        var options = Object.assign(
+          {"serverURL":"https://vercel-rkrveurb5-charles-hello.vercel.app/","path":"window.location.pathname","meta":["nick","mail","link"],"requiredMeta":["nick"],"lang":"zh-CN","emoji":["https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo"],"dark":"html[data-user-color-scheme=\"dark\"]","wordLimit":0,"pageSize":10},
+          {
+            el: '#waline',
+            path: window.location.pathname
+          }
+        )
+        Waline.init(options);
+        Fluid.utils.waitElementVisible('#waline .vcontent', () => {
+          var imgSelector = '#waline .vcontent img:not(.vemoji)';
+          Fluid.plugins.imageCaption(imgSelector);
+          Fluid.plugins.fancyBox(imgSelector);
+        })
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> <div> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script src="/js/duration.js"></script> </div> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+  
+<script src="//cdn.jsdelivr.net/gh/EmoryHuang/BlogBeautify@1.1/runtime.min.js"></script>
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+<!-- hexo injector body_end start --><script src="/js/backgroundize.js"></script><!-- hexo injector body_end end --></body>
+</html>
